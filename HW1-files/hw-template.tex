@@ -1,0 +1,103 @@
+\input{cs440_style.tex}
+\usepackage{algorithm}
+\usepackage{listings}
+%\usepackage{algpseudocode}
+\usepackage{graphicx,amssymb,amsmath}
+\usepackage{epstopdf}
+\sloppy
+
+
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in
+\topmargin -0.5in
+\textheight 9.0in
+
+\begin{document}
+
+\solution{Dan McQuillan}{\today}{1}{Spring 2014}
+
+\pagestyle{myheadings}  % Leave this command alone
+
+\begin{enumerate}
+
+	\item {\bf Solution to problem 1}
+	
+	\begin{enumerate}
+	
+		\item[(a)] 
+			\begin{enumerate}
+			\item[(i)] depth-first \\
+				\begin{tabular}{c|l}
+					\bf{n} & \bf{q} \\
+					\hline
+					- & \((A)\) \\
+					A & \((B,C,D)\) \\
+					B & \((E,F,C,D)\) \\
+					E & \((K,F,C,D)\) \\
+					K & \((F,C,D)\) \\
+				\end{tabular}
+			\item[(ii)] breadth-first \\
+				\begin{tabular}{c|l}
+					\bf{n} & \bf{q} \\
+					\hline 
+					- & \((A)\) \\
+					A & \((B,C,D)\) \\
+					B & \((C,D,E,F)\) \\
+					C & \((D,E,F,G,H)\) \\
+					D & \((E,F,G,H,I,J)\) \\
+					E & \((F,G,H,I,J,K)\) \\
+					F & \((G,H,I,J,K,L)\) \\				
+					G & \((H,I,J,K,L)\) \\				
+				\end{tabular}
+			\item[(iii)] uniform-cost \\
+				\begin{tabular}{c|l}
+					\bf{n} & \bf{q} \\
+					\hline 
+					- & \((A)\) \\
+					A & \((B,C,D)\) \\
+					B & \((C,E,F,D)\) \\
+					C & \((E,F,H,D,G)\) \\
+					E & \((F,H,D,G,K)\) \\
+					F & \((H,L,D,G,K)\) \\
+					H & \((L,D,N,G,M,K)\) \\
+					L & \((D,N,G,M,K)\) \\
+					D & \((N,G,M,I,K,J)\) \\
+					N & \((G,M,I,K,J)\) \\				
+				\end{tabular}
+			\item[(iv)] greedy/best-first \\
+				\begin{tabular}{c|l}
+					\bf{n} & \bf{q} \\
+					\hline 
+					- & \((A)\) \\
+					A & \((C,D,B)\) \\
+					C & \((G,H,D,B)\) \\
+					G & \((H,D,B)\) \\			
+				\end{tabular}
+			\item[(v)] $A^*$ \\
+				\begin{tabular}{c|l}
+					\bf{n} & \bf{q} \\
+					\hline 
+					- & \((A)\) \\
+					A & \((C,B,D)\) \\
+					C & \((B,H,D,G)\) \\
+					B & \((H,D,G,E,F)\) \\
+					H & \((D,G,N,E,F,M)\) \\
+					D & \((G,N,E,F,I,J,M)\) \\
+					G & \((N,E,F,I,J,M)\) \\			
+				\end{tabular}
+			\end{enumerate}
+		\item[(b)] 
+			
+		\item[(c)] 
+		\end{enumerate}
+			
+ 	\item {\bf Solution to problem 2}
+	 	
+
+\end{enumerate}
+
+
+
+\end{document}
+
