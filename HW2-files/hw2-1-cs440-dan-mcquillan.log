@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  10 FEB 2014 19:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  10 FEB 2014 22:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -286,115 +286,110 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 51.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 50--66
+Underfull \hbox (badness 10000) in paragraph at lines 50--67
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--66
+Underfull \hbox (badness 10000) in paragraph at lines 50--67
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--66
+Underfull \hbox (badness 10000) in paragraph at lines 50--67
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--69
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--85
+Underfull \hbox (badness 10000) in paragraph at lines 76--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--87
+Underfull \hbox (badness 10000) in paragraph at lines 86--88
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--89
+Underfull \hbox (badness 10000) in paragraph at lines 88--90
 
  []
 
 [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 92--102
+Underfull \hbox (badness 10000) in paragraph at lines 93--103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--108
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--108
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--134
+Underfull \hbox (badness 10000) in paragraph at lines 112--135
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--134
+Underfull \hbox (badness 10000) in paragraph at lines 136--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--154
+Underfull \hbox (badness 10000) in paragraph at lines 136--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--154
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--154
+Underfull \hbox (badness 10000) in paragraph at lines 136--155
 
  []
 
 [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 165.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 166.
 
  (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 165.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 166.
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--175
+Underfull \hbox (badness 10000) in paragraph at lines 174--176
 
  []
 
 [3]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 184.
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 199.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 185.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 200.
 
  (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 199.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 200.
  [4] [5]
 [6] [7] [8]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 459.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 473.
  [9] [10] [11] [12] (./hw2-1-cs440-dan-mcquillan.aux) ) 
 Here is how much of TeX's memory you used:
- 4101 strings out of 493315
- 56400 string characters out of 6137904
- 357357 words of memory out of 5000000
- 7479 multiletter control sequences out of 15000+600000
+ 4104 strings out of 493315
+ 56453 string characters out of 6137904
+ 332357 words of memory out of 5000000
+ 7482 multiletter control sequences out of 15000+600000
  14095 words of font info for 53 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  42i,9n,40p,337b,1542s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -408,13 +403,12 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf
 ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2013/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/font
-s/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on hw2-1-cs440-dan-mcquillan.pdf (12 pages, 192005 bytes).
+onts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on hw2-1-cs440-dan-mcquillan.pdf (12 pages, 190118 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 87 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
