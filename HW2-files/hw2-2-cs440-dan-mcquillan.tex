@@ -1,0 +1,390 @@
+\input{cs440_style.tex}
+\usepackage{algorithm}
+\usepackage{listings}
+%\usepackage{algpseudocode}
+\usepackage{graphicx,amssymb,amsmath}
+\usepackage{epstopdf}
+\usepackage{color}
+\sloppy
+
+
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in
+\topmargin -0.5in
+\textheight 9.0in
+
+\begin{document}
+
+\solution{Dan McQuillan}{\today}{2 - Part 2}{Spring 2014}
+
+\pagestyle{myheadings}  % Leave this command alone
+
+\begin{enumerate}
+
+	\item {\bf Solution to problem 2} \\
+		The weight vector values were largely different as shown below: \\
+		\[
+			\begin{array}{l|l}
+				\text{\bf{old}} & \text{\bf{new}} \\
+				\hline 
+				\theta = -54.0 & \theta = 513.0 \\
+				w_{1} \rightarrow -752.0 & w_{1} \rightarrow -1719.0  \\
+				w_{2} \rightarrow 4771.0 & w_{2} \rightarrow 2216.0  \\
+				w_{3} \rightarrow 17714.0 & w_{3} \rightarrow 1357.0  \\
+				w_{4} \rightarrow 762.0 & w_{4} \rightarrow 1506.0  \\
+				w_{5} \rightarrow 6.0 & w_{5} \rightarrow 435.0  \\
+				w_{6} \rightarrow 676.0 & w_{6} \rightarrow 1152.0  \\
+				w_{7} \rightarrow 3060.0 & w_{7} \rightarrow -300.0  \\
+				w_{8} \rightarrow -2004.0 & w_{8} \rightarrow -1928.0  \\
+				w_{9} \rightarrow 5459.0 & w_{9} \rightarrow 1462.0  \\
+				w_{10} \rightarrow 9591.2999999989 & w_{10} \rightarrow 991.9000000000113  \\
+				w_{11} \rightarrow 3832.0 & w_{11} \rightarrow -775.0  \\
+				w_{12} \rightarrow 14963.0 & w_{12} \rightarrow 6726.0 \\
+				w_{13} \rightarrow 20912.0 & w_{13} \rightarrow 11721.0  \\
+				
+			\end{array}	
+		\] \\
+				
+		The confusion matrix also was also more error prone when testing data set 1.  It resulted in the following confusion matrix:
+		
+		\[
+			\begin{array}{|c|c|}
+				\hline
+					53 & 1 \\
+					\hline
+					9 & 54 \\
+				\hline
+			\end{array}
+		\]
+			
+		The application to data set 3 produced largely different conclusions.
+		
+		However, the most important feature's weight value stayed relatively the same which shows that it has more influence on the \(\Delta w\) on each iteration of the inputs.   This is as expected since because that feature is the most important.\\
+
+		
+	\item{\bf Solution to problem 3}
+		\begin{enumerate}
+			\item{Find and report the list MAX for Dataset 2}
+				\( (1.0, 4.0, 170.0, 407.0, 1.0, 2.0, 194.0, 1.0, 4.0, 3.0, 3.0, 7.0)\)
+			\item{Repeat Problem 1} \\ \\
+				\bf{Training Dataset 1x} \\
+				\noindent\rule{8cm}{0.4pt} \\
+				\textnormal{The training took 14 epochs.} \\
+				\(Threshhold: 5.0 \) \\
+				\( \gamma \rightarrow 0.0320963696907362 \) \\
+				\( w_{1} \rightarrow -1.2368421052631573 \) \\
+				\( w_{2} \rightarrow 3.0 \) \\
+				\( w_{3} \rightarrow 5.5 \) \\
+				\( w_{4} \rightarrow -0.2899999999999997 \) \\
+				\( w_{5} \rightarrow -0.13829787234042568 \) \\
+				\( w_{6} \rightarrow 0.0 \) \\
+				\( w_{7} \rightarrow 0.5 \) \\
+				\( w_{8} \rightarrow -13.317204301075275 \) \\
+				\( w_{9} \rightarrow 3.0 \) \\
+				\( w_{10} \rightarrow 5.645161290322578 \) \\
+				\( w_{11} \rightarrow 2.9999999999999987 \) \\
+				\( w_{12} \rightarrow 5.0 \) \\
+				\( w_{13} \rightarrow 5.7142857142857135 \) \\
+
+				\bf{Test Dataset 1x} \\
+				\noindent\rule{8cm}{0.4pt} \\
+				\textnormal{Confusion Matrix:} \\ \\
+				\(
+					\begin{array}{|c|c|}
+						\hline
+							54 & 0 \\
+							\hline
+							0 & 63 \\
+						\hline
+					\end{array}
+				\) \\ \\
+				\textnormal{Total loss: 0.0} \\
+				
+				\bf{Test Dataset 2x} \\
+				\noindent\rule{8cm}{0.4pt} \\
+				\textnormal{False Positives:} \\
+				\textnormal{Index: 7 }\\
+				\textnormal{ Confusion matrix: } \\ \\
+				\(
+					\begin{array}{|c|c|}
+						\hline
+							13 & 0 \\
+							\hline
+							1 & 19 \\
+						\hline
+					\end{array}
+				\) \\ \\
+				\textnormal{Total loss:} \(0.010623925503195387\) \\
+				
+				\bf{Application Dataset 3x} \\
+				\noindent\rule{8cm}{0.4pt} \\
+				\( 1 \rightarrow 0.0 \) \\
+				\( 2 \rightarrow 1.0 \) \\
+				\( 3 \rightarrow 0.0 \) \\
+				\( 4 \rightarrow 1.0 \) \\
+				\( 5 \rightarrow 1.0 \) \\
+				\( 6 \rightarrow 0.0 \) \\
+				\( 7 \rightarrow 0.0 \) \\
+				\( 8 \rightarrow 0.0 \) \\
+				\( 9 \rightarrow 0.0 \) \\
+				\( 10 \rightarrow 1.0 \) \\
+				\( 11 \rightarrow 1.0 \) \\
+				\( 12 \rightarrow 0.0 \) \\
+				\( 13 \rightarrow 1.0 \) \\
+				\( 14 \rightarrow 0.0 \) \\
+				\( 15 \rightarrow 0.0 \) \\
+				\( 16 \rightarrow 0.0 \) \\
+				\( 17 \rightarrow 1.0 \) \\
+				\( 18 \rightarrow 0.0 \) \\
+				\( 19 \rightarrow 0.0 \) \\
+				\( 20 \rightarrow 0.0 \) \\
+				\( 21 \rightarrow 0.0 \) \\
+				
+			\item{Explanation} \\
+				\textnormal{The results above show that the weights were quite significantly smaller and the number of epoch were also quite a bit less.  This is a result of the perceptron having to oscillate because of the larger difference between input vectors.  Instead it is more likely to increase with a smaller \(\Delta w\) and have a lesser chance to have to use a negative \(\Delta w\) to correct a movement when it moves past the margin of a "good" perceptron.}
+			\item{Test new perceptron on DataSet1} \\
+				\textnormal{When testing data set 1 it resulted in a complete failure of classifying the input vectors from dataset one.  This is a result of normalizing the input vectors before training which therefore resulted in a normalization of the weight vector.  This caused the perceptron to misclassify one of the classifications since it resulted in being below all the points and caused them all to be classified as positive. } \\
+			\item{Is is possible to recover the problem 1 perceptron} \\
+				\textnormal{It is not possible to recover the perceptron from problem 1 from this weight vector since the resultant weight vectors are dependent on the values chosen to be the initial training weights.  This is because the values for the applied \( \Delta w \)'s will be different for each set of weights that are applied.  If the weights is higher for example then the training may be more likely to jump past the set of "good" perceptrons.}
+				
+			
+		\end{enumerate}
+		\item{\bf Solution to problem 4}
+			\begin{enumerate}
+							
+				\item{Train on DataSet4, test on DataSet1} \\
+					\bf{Training Results: } \\
+						\textnormal{The training took } \(2443\) \textnormal{ epochs. } \\
+						\textnormal{Threshhold:} \( 413.0 \) \\
+						\( \gamma \rightarrow 0.01087449395327017 \) \\ \\
+						\( w_{1} \rightarrow -39.0 \) \\
+						\( w_{2} \rightarrow 3052.0 \) \\
+						\( w_{3} \rightarrow 3274.0 \) \\
+						\( w_{4} \rightarrow 533.0 \) \\
+						\( w_{5} \rightarrow 550.0 \) \\
+						\( w_{6} \rightarrow 2354.0 \) \\
+						\( w_{7} \rightarrow -3552.0 \) \\
+						\( w_{8} \rightarrow -2025.0 \) \\
+						\( w_{9} \rightarrow 2148.0 \) \\
+						\( w_{10} \rightarrow 2022.2999999999358 \) \\
+						\( w_{11} \rightarrow -1500.0 \) \\
+						\( w_{12} \rightarrow 6491.0 \) \\
+						\( w_{13} \rightarrow 14862.0 \) \\ \\
+					\bf{Testing Results} \\
+					\textnormal{False Positives: } \\
+					\textnormal{Index: } \( 5 \) \\
+					\textnormal{Inputs: } \( (67.0, 0.0, 3.0, 115.0, 564.0, 0.0, 2.0, 160.0, 0.0, 1.6, 2.0, 0.0, 7.0) \) \\
+					\textnormal{Index: } \( 6 \) \\
+					\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 140.0, 417.0, 1.0, 2.0, 157.0, 0.0, 0.8, 1.0, 1.0, 3.0) \) \\
+					\textnormal{Index: } \( 8 \) \\
+					\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 160.0, 360.0, 0.0, 2.0, 151.0, 0.0, 0.8, 1.0, 0.0, 3.0) \) \\
+					\textnormal{Index: } \( 20 \) \\
+					\textnormal{Inputs: } \( (64.0, 0.0, 3.0, 140.0, 313.0, 0.0, 0.0, 133.0, 0.0, 0.2, 1.0, 0.0, 7.0) \) \\
+					\textnormal{Index: } \( 33 \) \\
+					\textnormal{Inputs: } \( (64.0, 0.0, 4.0, 180.0, 325.0, 0.0, 0.0, 154.0, 1.0, 0.0, 1.0, 0.0, 3.0) \) \\
+					\textnormal{Index: } \( 53 \) \\
+					\textnormal{Inputs: } \( (74.0, 0.0, 2.0, 120.0, 269.0, 0.0, 2.0, 121.0, 1.0, 0.2, 1.0, 1.0, 3.0) \) \\
+					\textnormal{Index: } \( 77 \) \\
+					\textnormal{Inputs: } \( (66.0, 0.0, 1.0, 150.0, 226.0, 0.0, 0.0, 114.0, 0.0, 2.6, 3.0, 0.0, 3.0) \) \\
+					\textnormal{Index: } \( 114 \) \\
+					\textnormal{Inputs: } \( (60.0, 0.0, 3.0, 120.0, 178.0, 1.0, 0.0, 96.0, 0.0, 0.0, 1.0, 0.0, 3.0) \) \\ \\
+					\textnormal{False Negatives: } \\
+					\textnormal{Index: } \( 34 \) \\
+					\textnormal{Inputs: } \( (53.0, 1.0, 4.0, 140.0, 203.0, 1.0, 2.0, 155.0, 1.0, 3.1, 3.0, 0.0, 7.0) \) \\ 
+					
+					\textnormal{Confusion Matrix: } \\ \\
+					\( 
+						\begin{array}{|c|c|}
+							\hline
+							53 & 1 \\
+							\hline							
+							8 & 55 \\
+							\hline
+						\end{array}
+					\) \\ \\
+					Total loss: \(21.525012758300132\) \\ \\
+				\item{Train on DataSet5, test on DataSet1} \\
+					\bf{Training Results: } \\
+						\textnormal{The training took } \(1190\) \textnormal{ epochs. } \\
+						\textnormal{Threshhold:} \( 272.0 \) \\
+						\( \gamma \rightarrow 0.04518422260458557 \) \\ \\
+						\( w_{1} \rightarrow 177.0 \) \\
+						\( w_{2} \rightarrow 2699.0 \) \\
+						\( w_{3} \rightarrow 819.0 \) \\
+						\( w_{4} \rightarrow 631.0 \) \\
+						\( w_{5} \rightarrow 497.0 \) \\
+						\( w_{6} \rightarrow 1189.0 \) \\
+						\( w_{7} \rightarrow -952.0 \) \\
+						\( w_{8} \rightarrow -1948.0 \) \\
+						\( w_{9} \rightarrow 2047.0 \) \\
+						\( w_{10} \rightarrow 1521.3999999999726 \) \\
+						\( w_{11} \rightarrow -1380.0 \) \\
+						\( w_{12} \rightarrow 5972.0 \) \\
+						\( w_{13} \rightarrow 10336.0 \) \\ \\
+					\bf{Testing Results} \\
+					\textnormal{False Positives: } \\
+					\textnormal{Index: } \( 5 \) \\
+					\textnormal{Inputs: } \( (67.0, 0.0, 3.0, 115.0, 564.0, 0.0, 2.0, 160.0, 0.0, 1.6, 2.0, 0.0, 7.0) \) \\
+					\textnormal{Index: } \( 6 \) \\
+					\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 140.0, 417.0, 1.0, 2.0, 157.0, 0.0, 0.8, 1.0, 1.0, 3.0) \) \\
+					\textnormal{Index: } \( 8 \) \\
+					\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 160.0, 360.0, 0.0, 2.0, 151.0, 0.0, 0.8, 1.0, 0.0, 3.0) \) \\
+					\textnormal{Index: } \( 20 \) \\
+					\textnormal{Inputs: } \( (64.0, 0.0, 3.0, 140.0, 313.0, 0.0, 0.0, 133.0, 0.0, 0.2, 1.0, 0.0, 7.0) \) \\
+					\textnormal{Index: } \( 31 \) \\
+					\textnormal{Inputs: } \( (69.0, 1.0, 1.0, 160.0, 234.0, 1.0, 2.0, 131.0, 0.0, 0.1, 2.0, 1.0, 3.0) \) \\
+					\textnormal{Index: } \( 33 \) \\
+					\textnormal{Inputs: } \( (64.0, 0.0, 4.0, 180.0, 325.0, 0.0, 0.0, 154.0, 1.0, 0.0, 1.0, 0.0, 3.0) \) \\
+					\textnormal{Index: } \( 53 \) \\
+					\textnormal{Inputs: } \( (74.0, 0.0, 2.0, 120.0, 269.0, 0.0, 2.0, 121.0, 1.0, 0.2, 1.0, 1.0, 3.0) \) \\
+					\textnormal{Index: } \( 77 \) \\
+					\textnormal{Inputs: } \( (66.0, 0.0, 1.0, 150.0, 226.0, 0.0, 0.0, 114.0, 0.0, 2.6, 3.0, 0.0, 3.0) \) \\
+					\textnormal{Index: } \( 91 \) \\
+					\textnormal{Inputs: } \( (76.0, 0.0, 3.0, 140.0, 197.0, 0.0, 1.0, 116.0, 0.0, 1.1, 2.0, 0.0, 3.0) \) \\
+					\textnormal{Index: } \( 114 \) \\
+					\textnormal{Inputs: } \( (60.0, 0.0, 3.0, 120.0, 178.0, 1.0, 0.0, 96.0, 0.0, 0.0, 1.0, 0.0, 3.0) \) \\ \\
+					\textnormal{False Negatives: } \\
+					\textnormal{Index: } \( 34 \) \\
+					\textnormal{Inputs: } \( (53.0, 1.0, 4.0, 140.0, 203.0, 1.0, 2.0, 155.0, 1.0, 3.1, 3.0, 0.0, 7.0) \) \\
+					\textnormal{Index: } \( 69 \) \\
+					\textnormal{Inputs: } \( (60.0, 1.0, 4.0, 117.0, 230.0, 1.0, 0.0, 160.0, 1.0, 1.4, 1.0, 2.0, 7.0) \) \\
+					\textnormal{Index: } \( 95 \) \\
+					\textnormal{Inputs: } \( (39.0, 1.0, 4.0, 118.0, 219.0, 0.0, 0.0, 140.0, 0.0, 1.2, 2.0, 0.0, 7.0) \) \\
+					\textnormal{Confusion Matrix: } \\ \\
+					\( 
+						\begin{array}{|c|c|}
+							\hline
+							51 & 3 \\
+							\hline							
+							10 & 53 \\
+							\hline
+						\end{array}
+					\) \\ \\
+					Total loss: \(32.68215493625958\) \\
+				\item{Train on DataSet6, test on DataSet1} \\
+					\bf{Training Results: } \\
+						\textnormal{The training took } \(2593\) \textnormal{ epochs. } \\
+						\textnormal{Threshhold:} \( 858.0 \) \\
+						\( \gamma \rightarrow 0.022928058158089223 \) \\ \\
+						\( w_{1} \rightarrow -1853.0 \) \\
+						\( w_{2} \rightarrow 3172.0 \) \\
+						\( w_{3} \rightarrow 3650.0 \) \\
+						\( w_{4} \rightarrow 914.0 \) \\
+						\( w_{5} \rightarrow 588.0 \) \\
+						\( w_{6} \rightarrow 753.0 \) \\
+						\( w_{7} \rightarrow -3254.0 \) \\
+						\( w_{8} \rightarrow -1900.0 \) \\
+						\( w_{9} \rightarrow 1060.0 \) \\
+						\( w_{10} \rightarrow 1868.8000000000209 \) \\
+						\( w_{11} \rightarrow -580.0 \) \\
+						\( w_{12} \rightarrow 8319.0 \) \\
+						\( w_{13} \rightarrow 17636.0 \) \\ \\
+					\bf{Testing Results} \\
+						\textnormal{False Positives:} \\ 
+						\textnormal{Index: } \( 5 \) \\
+						\textnormal{Inputs: } \( (67.0, 0.0, 3.0, 115.0, 564.0, 0.0, 2.0, 160.0, 0.0, 1.6, 2.0, 0.0, 7.0) \) \\
+						\textnormal{Index: } \( 6 \) \\
+						\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 140.0, 417.0, 1.0, 2.0, 157.0, 0.0, 0.8, 1.0, 1.0, 3.0) \) \\
+						\textnormal{Index: } \( 8 \) \\
+						\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 160.0, 360.0, 0.0, 2.0, 151.0, 0.0, 0.8, 1.0, 0.0, 3.0) \) \\
+						\textnormal{Index: } \( 20 \) \\
+						\textnormal{Inputs: } \( (64.0, 0.0, 3.0, 140.0, 313.0, 0.0, 0.0, 133.0, 0.0, 0.2, 1.0, 0.0, 7.0) \) \\
+						\textnormal{Index: } \( 33 \) \\
+						\textnormal{Inputs: } \( (64.0, 0.0, 4.0, 180.0, 325.0, 0.0, 0.0, 154.0, 1.0, 0.0, 1.0, 0.0, 3.0) \) \\ \\
+						\textnormal{False Negatives: } \\
+						\textnormal{Index: } \( 34 \) \\
+						\textnormal{Inputs: } \( (53.0, 1.0, 4.0, 140.0, 203.0, 1.0, 2.0, 155.0, 1.0, 3.1, 3.0, 0.0, 7.0) \) \\
+						\textnormal{Index: } \( 69 \) \\
+						\textnormal{Inputs: } \( (60.0, 1.0, 4.0, 117.0, 230.0, 1.0, 0.0, 160.0, 1.0, 1.4, 1.0, 2.0, 7.0) \) \\
+						\textnormal{Index: } \( 108 \) \\
+						\textnormal{Inputs: } \( (54.0, 1.0, 4.0, 110.0, 206.0, 0.0, 2.0, 108.0, 1.0, 0.0, 2.0, 1.0, 3.0) \) \\
+					\textnormal{Confusion Matrix: } \\ \\
+					\( 
+						\begin{array}{|c|c|}
+							\hline
+							51 & 3 \\
+							\hline							
+							5 & 58 \\
+							\hline
+						\end{array}
+					\) \\ \\
+					Total loss: \(13.610748698886589\) \\ \\
+				\item{Which of the four yields the best performance? } \\
+					\textnormal{The test training from the permutation of the second dataset had the best performance since we are looking at minimum loss as a determining factor in the success of the perceptron.  The results will not always be identical since for the most part the permutations are generated via random numbers and since they are seeded via the time for the Collections.shuffle method it will produce different results each run of the training. } \\
+				\item{Test averaged weight vector on dataset 1.} \\
+					Training on dataset2: \\
+					\textnormal{Threshhold:} \( 513.0 \) \\
+					\( \gamma \rightarrow 2.7031724654225244 \times 10^{-4} \) \\
+					\( w_{1} \rightarrow -1719.0 \) \\
+					\( w_{2} \rightarrow 2216.0 \) \\
+					\( w_{3} \rightarrow 1357.0 \) \\
+					\( w_{4} \rightarrow 1506.0 \) \\
+					\( w_{5} \rightarrow 435.0 \) \\
+					\( w_{6} \rightarrow 1152.0 \) \\
+					\( w_{7} \rightarrow -300.0 \) \\
+					\( w_{8} \rightarrow -1928.0 \) \\
+					\( w_{9} \rightarrow 1462.0 \) \\
+					\( w_{10} \rightarrow 991.9000000000113 \) \\
+					\( w_{11} \rightarrow -775.0 \) \\
+					\( w_{12} \rightarrow 6726.0 \) \\
+					\( w_{13} \rightarrow 11721.0 \) \\ \\
+					
+					Averaged weight vector: \\
+					\( threshold \rightarrow 0.03042243518037323 \) \\
+					\( w_{1} \rightarrow -0.04957994461909904 \) \\
+					\( w_{2} \rightarrow 0.17236419772286374 \) \\
+					\( w_{3} \rightarrow 0.12970485078786842 \) \\
+					\( w_{4} \rightarrow 0.05714024689694883 \) \\
+					\( w_{5} \rightarrow 0.03208977822798198 \) \\
+					\( w_{6} \rightarrow 0.08540346718962719 \) \\
+					\( w_{7} \rightarrow -0.11290404208868643 \) \\
+					\( w_{8} \rightarrow -0.12295889110966987 \) \\
+					\( w_{9} \rightarrow 0.1083073557681354 \) \\
+					\( w_{10} \rightarrow 0.09787094960776252 \) \\
+					\( w_{11} \rightarrow -0.06843234083135682 \) \\
+					\( w_{12} \rightarrow 0.42531877515611183 \) \\
+					\( w_{13} \rightarrow 0.827552512265163 \) \\ \\
+
+					Results: \\
+					\textnormal{False Positives: } \\
+					\textnormal{Index: } \( 5 \) \\
+					\textnormal{Inputs: } \( (67.0, 0.0, 3.0, 115.0, 564.0, 0.0, 2.0, 160.0, 0.0, 1.6, 2.0, 0.0, 7.0) \) \\
+					\textnormal{Index: } \( 6 \) \\
+					\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 140.0, 417.0, 1.0, 2.0, 157.0, 0.0, 0.8, 1.0, 1.0, 3.0) \) \\
+					\textnormal{Index: } \( 8 \) \\
+					\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 160.0, 360.0, 0.0, 2.0, 151.0, 0.0, 0.8, 1.0, 0.0, 3.0) \) \\
+					\textnormal{Index: } \( 20 \) \\
+					\textnormal{Inputs: } \( (64.0, 0.0, 3.0, 140.0, 313.0, 0.0, 0.0, 133.0, 0.0, 0.2, 1.0, 0.0, 7.0) \) \\
+					\textnormal{Index: } \( 31 \) \\
+					\textnormal{Inputs: } \( (69.0, 1.0, 1.0, 160.0, 234.0, 1.0, 2.0, 131.0, 0.0, 0.1, 2.0, 1.0, 3.0) \) \\
+					\textnormal{Index: } \( 33 \) \\
+					\textnormal{Inputs: } \( (64.0, 0.0, 4.0, 180.0, 325.0, 0.0, 0.0, 154.0, 1.0, 0.0, 1.0, 0.0, 3.0) \) \\
+					\textnormal{Index: } \( 77 \) \\
+					\textnormal{Inputs: } \( (66.0, 0.0, 1.0, 150.0, 226.0, 0.0, 0.0, 114.0, 0.0, 2.6, 3.0, 0.0, 3.0) \) \\
+					\textnormal{Index: } \( 114 \) \\
+					\textnormal{Inputs: } \( (60.0, 0.0, 3.0, 120.0, 178.0, 1.0, 0.0, 96.0, 0.0, 0.0, 1.0, 0.0, 3.0) \) \\ \\
+					\textnormal{False Negatives: } \\
+					\textnormal{Index: } \( 34 \) \\
+					\textnormal{Inputs: } \( (53.0, 1.0, 4.0, 140.0, 203.0, 1.0, 2.0, 155.0, 1.0, 3.1, 3.0, 0.0, 7.0) \) \\
+					\textnormal{Index: } \( 69 \) \\
+					\textnormal{Inputs: } \( (60.0, 1.0, 4.0, 117.0, 230.0, 1.0, 0.0, 160.0, 1.0, 1.4, 1.0, 2.0, 7.0) \) \\ \\
+										
+					\textnormal{Confusion Matrix: } \\ \\
+					\( 
+						\begin{array}{|c|c|}
+							\hline
+							52 & 2 \\
+							\hline							
+							8 & 55 \\
+							\hline
+						\end{array}
+					\) \\ \\
+
+					Total loss: \(21.093763810153984\) \\
+					
+					\textnormal{The results were successful in classifying data set 1 with minimal error.  Also, the total loss ended up being near the average of the losses of datasets 2,4,5, and 6.}
+			\end{enumerate}
+\end{enumerate}
+\end{document}
+
