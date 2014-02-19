@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  18 FEB 2014 19:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  18 FEB 2014 19:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**hw2-2-cs440-dan-mcquillan.tex
-(./hw2-2-cs440-dan-mcquillan.tex
+**hw2-2-p2-cs440-dan-mcquillan.tex
+(./hw2-2-p2-cs440-dan-mcquillan.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 (./cs440_style.tex
@@ -239,8 +239,8 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-(./hw2-2-cs440-dan-mcquillan.aux)
-\openout1 = `hw2-2-cs440-dan-mcquillan.aux'.
+No file hw2-2-p2-cs440-dan-mcquillan.aux.
+\openout1 = `hw2-2-p2-cs440-dan-mcquillan.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
@@ -255,7 +255,6 @@ LaTeX Font Info:    ... okay on input line 17.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
 \c@lstlisting=\count119
-
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count120
@@ -297,270 +296,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 70--89
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 70--89
-
- []
-
 [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 90--103
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--103
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--103
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--119
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--119
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--119
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--143
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 146--148
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--188
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--188
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--188
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--188
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--188
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--188
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--188
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 188--218
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 188--218
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 188--218
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 188--218
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 188--218
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 188--218
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 220--250
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--250
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--250
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--250
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--250
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--250
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--250
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 252--267
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 252--267
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 252--267
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 252--267
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 267--285
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 267--285
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 286--288
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 286--288
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 289--302
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 303--323
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 303--323
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--329
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--329
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 332--341
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 332--341
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 342--343
-
- []
-
-[7] [8] (./hw2-2-cs440-dan-mcquillan.aux) ) 
+(./hw2-2-p2-cs440-dan-mcquillan.aux) ) 
 Here is how much of TeX's memory you used:
- 3805 strings out of 493315
- 52394 string characters out of 6137904
- 118503 words of memory out of 5000000
- 7200 multiletter control sequences out of 15000+600000
- 10210 words of font info for 38 fonts, out of 8000000 for 9000
+ 3801 strings out of 493315
+ 52334 string characters out of 6137904
+ 116503 words of memory out of 5000000
+ 7199 multiletter control sequences out of 15000+600000
+ 9858 words of font info for 37 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 42i,8n,32p,829b,311s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmti12.pfb>
-Output written on hw2-2-cs440-dan-mcquillan.pdf (8 pages, 101045 bytes).
+ 42i,8n,32p,340b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmti12.pfb>
+Output written on hw2-2-p2-cs440-dan-mcquillan.pdf (1 page, 66728 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 32 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

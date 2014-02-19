@@ -1,0 +1,67 @@
+\input{cs440_style.tex}
+\usepackage{algorithm}
+\usepackage{listings}
+%\usepackage{algpseudocode}
+\usepackage{graphicx,amssymb,amsmath}
+\usepackage{epstopdf}
+\usepackage{color}
+\sloppy
+
+
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in
+\topmargin -0.5in
+\textheight 9.0in
+
+\begin{document}
+
+\solution{Dan McQuillan}{\today}{2 - Part 2 Problem 2}{Spring 2014}
+
+\pagestyle{myheadings}  % Leave this command alone
+
+\begin{enumerate}
+
+	\item {\bf Solution to problem 2} \\
+		The weight vector values were largely different as shown below: \\
+		\[
+			\begin{array}{l|l}
+				\text{\bf{old}} & \text{\bf{new}} \\
+				\hline 
+				\theta = -54.0 & \theta = 513.0 \\
+				w_{1} \rightarrow -752.0 & w_{1} \rightarrow -1719.0  \\
+				w_{2} \rightarrow 4771.0 & w_{2} \rightarrow 2216.0  \\
+				w_{3} \rightarrow 17714.0 & w_{3} \rightarrow 1357.0  \\
+				w_{4} \rightarrow 762.0 & w_{4} \rightarrow 1506.0  \\
+				w_{5} \rightarrow 6.0 & w_{5} \rightarrow 435.0  \\
+				w_{6} \rightarrow 676.0 & w_{6} \rightarrow 1152.0  \\
+				w_{7} \rightarrow 3060.0 & w_{7} \rightarrow -300.0  \\
+				w_{8} \rightarrow -2004.0 & w_{8} \rightarrow -1928.0  \\
+				w_{9} \rightarrow 5459.0 & w_{9} \rightarrow 1462.0  \\
+				w_{10} \rightarrow 9591.2999999989 & w_{10} \rightarrow 991.9000000000113  \\
+				w_{11} \rightarrow 3832.0 & w_{11} \rightarrow -775.0  \\
+				w_{12} \rightarrow 14963.0 & w_{12} \rightarrow 6726.0 \\
+				w_{13} \rightarrow 20912.0 & w_{13} \rightarrow 11721.0  \\
+				
+			\end{array}	
+		\] \\
+				
+		The confusion matrix also was also more error prone when testing data set 1.  It resulted in the following confusion matrix:
+		
+		\[
+			\begin{array}{|c|c|}
+				\hline
+					53 & 1 \\
+					\hline
+					9 & 54 \\
+				\hline
+			\end{array}
+		\]
+			
+		The application to data set 3 produced largely different conclusions.
+		
+		However, the most important feature's weight value stayed relatively the same which shows that it has more influence on the \(\Delta w\) on each iteration of the inputs.   This is as expected since because that feature is the most important.\\
+
+\end{enumerate}
+\end{document}
+
