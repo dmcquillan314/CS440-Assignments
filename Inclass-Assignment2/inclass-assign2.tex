@@ -1,0 +1,86 @@
+\input{cs440_style.tex}
+\usepackage{algorithm}
+\usepackage{listings}
+%\usepackage{algpseudocode}
+\usepackage{graphicx,amssymb,amsmath}
+\usepackage{epstopdf}
+\sloppy
+
+
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in
+\topmargin -0.5in
+\textheight 9.0in
+
+\begin{document}
+
+\solution{Dan McQuillan}{\today}{ 2}{Spring 2014}
+
+\pagestyle{myheadings}  % Leave this command alone
+
+\begin{enumerate}
+
+	\item{\bf What's the probability of a burglary?}
+	
+	\[
+		P(B) = 0.001
+	\]
+	
+	\item{\bf Are burglaries or earthquakes more likely?}
+	
+	\[
+		P(B) = 0.001 < P(E) = 0.002
+	\]
+	Earthquakes are more likely.
+	
+	\item{\bf What's the probability of the alarm sounding when there is an earthquake but no burglary?}
+	
+	\[
+		P( A | \neg b ) = 0.29
+	\]
+	
+	\item{\bf What's the probability of the alarm sounding given that John had called?}
+
+	\(
+		p(A | J = true ) = \text{ ?}
+	\)
+	
+	\(
+		P(\neg a ) = 1 - P(a) \rightarrow P(a) \text{ determines the full distribution.}
+	\) \\
+	
+	Baye's Theorem:
+	
+	\[
+		P(A|J) = \frac{P(J|A)P(A)}{P(J)}
+	\]
+	
+	Marginalize over B and E: \\
+	
+	\(
+		\begin{array}{ll}
+			P(A) & = P(A|B,E) = \alpha P(A,B,E) \\ \\
+				& = \Sigma_{b \in B} \Sigma_{e \in E} P(b) P(e) P(A|b,e) \\ \\
+				& = \Sigma_{b \in B} P(b) \Sigma_{e \in E} P(e) P(A | b,e) \\ \\
+				& = P(b)[P(e) P(A | b, e) + P(\neg e) P(A | b, \neg e)] + P(\neg b)[P(e) P(A | \neg b, e) + P(\neg e) P(A | \neg b, \neg e)] \\ \\
+				& = (0.001) [ (0.002) (0.95) + (0.998) (0.95) ] + (0.999) [ (0.002) (0.29) + (0.998) (0.001) ] \\ \\
+			P(A) & \approx 0.002526422 
+		\end{array}
+	\) \\
+	
+	Marginalize over A:
+	
+	\(
+		\begin{array}{ll}
+			P(J) & = P(J | A) = \alpha P(J, A) \\ \\
+			        & = \Sigma_{a \in A} P(a) P(J | a) \\ \\
+			        & = P(a)P(J | a) + P(\neg a) P(J | \neg a) \\ \\
+			        & = (0.002526422)(0.9) + (0.997473578)(0.05) \\ \\
+			P(J) & \approx 0.0521474587
+		\end{array}
+	\)
+\end{enumerate}
+
+\end{document}
+

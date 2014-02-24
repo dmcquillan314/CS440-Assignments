@@ -1,0 +1,301 @@
+------------------------
+Data set 2 training
+------------------------
+\textnormal{The training took } \(1637\) \textnormal{ epochs. }
+\textnormal{Threshhold:} \( 513.0 \)
+\( \gamma \rightarrow 2.7031724654225244E-4 \)
+\( w_{1} \rightarrow -1719.0 \) \\
+\( w_{2} \rightarrow 2216.0 \) \\
+\( w_{3} \rightarrow 1357.0 \) \\
+\( w_{4} \rightarrow 1506.0 \) \\
+\( w_{5} \rightarrow 435.0 \) \\
+\( w_{6} \rightarrow 1152.0 \) \\
+\( w_{7} \rightarrow -300.0 \) \\
+\( w_{8} \rightarrow -1928.0 \) \\
+\( w_{9} \rightarrow 1462.0 \) \\
+\( w_{10} \rightarrow 991.9000000000113 \) \\
+\( w_{11} \rightarrow -775.0 \) \\
+\( w_{12} \rightarrow 6726.0 \) \\
+\( w_{13} \rightarrow 11721.0 \) \\
+------------------------
+Data set 4 training
+------------------------
+\textnormal{The training took } \(1572\) \textnormal{ epochs. }
+\textnormal{Threshhold:} \( 612.0 \)
+\( \gamma \rightarrow 0.08551637281027642 \)
+\( w_{1} \rightarrow -449.0 \) \\
+\( w_{2} \rightarrow 2997.0 \) \\
+\( w_{3} \rightarrow 2286.0 \) \\
+\( w_{4} \rightarrow 927.0 \) \\
+\( w_{5} \rightarrow 526.0 \) \\
+\( w_{6} \rightarrow 361.0 \) \\
+\( w_{7} \rightarrow -1940.0 \) \\
+\( w_{8} \rightarrow -2171.0 \) \\
+\( w_{9} \rightarrow 1543.0 \) \\
+\( w_{10} \rightarrow 3807.299999999868 \) \\
+\( w_{11} \rightarrow 166.0 \) \\
+\( w_{12} \rightarrow 5163.0 \) \\
+\( w_{13} \rightarrow 13713.0 \) \\
+------------------------
+Data set 5 training
+------------------------
+\textnormal{The training took } \(1737\) \textnormal{ epochs. }
+\textnormal{Threshhold:} \( 650.0 \)
+\( \gamma \rightarrow 0.07955877280170609 \)
+\( w_{1} \rightarrow -1200.0 \) \\
+\( w_{2} \rightarrow 3007.0 \) \\
+\( w_{3} \rightarrow 1766.0 \) \\
+\( w_{4} \rightarrow 1677.0 \) \\
+\( w_{5} \rightarrow 555.0 \) \\
+\( w_{6} \rightarrow -21.0 \) \\
+\( w_{7} \rightarrow -1560.0 \) \\
+\( w_{8} \rightarrow -2545.0 \) \\
+\( w_{9} \rightarrow 1421.0 \) \\
+\( w_{10} \rightarrow 2497.999999999887 \) \\
+\( w_{11} \rightarrow -135.0 \) \\
+\( w_{12} \rightarrow 7571.0 \) \\
+\( w_{13} \rightarrow 12296.0 \) \\
+------------------------
+Data set 6 training
+------------------------
+\textnormal{The training took } \(3437\) \textnormal{ epochs. }
+\textnormal{Threshhold:} \( 791.0 \)
+\( \gamma \rightarrow 0.00675989841026674 \)
+\( w_{1} \rightarrow 1374.0 \) \\
+\( w_{2} \rightarrow 3520.0 \) \\
+\( w_{3} \rightarrow 3954.0 \) \\
+\( w_{4} \rightarrow -271.0 \) \\
+\( w_{5} \rightarrow 538.0 \) \\
+\( w_{6} \rightarrow 635.0 \) \\
+\( w_{7} \rightarrow -5986.0 \) \\
+\( w_{8} \rightarrow -2088.0 \) \\
+\( w_{9} \rightarrow 1518.0 \) \\
+\( w_{10} \rightarrow 5392.699999999808 \) \\
+\( w_{11} \rightarrow 778.0 \) \\
+\( w_{12} \rightarrow 7076.0 \) \\
+\( w_{13} \rightarrow 18931.0 \) \\
+------------------------
+Data set 1 test dataset 2
+------------------------
+False Positive Found: 
+\textnormal{Index: } \( 5 \) \\
+\textnormal{Inputs: } \( (67.0, 0.0, 3.0, 115.0, 564.0, 0.0, 2.0, 160.0, 0.0, 1.6, 2.0, 0.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 6 \) \\
+\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 140.0, 417.0, 1.0, 2.0, 157.0, 0.0, 0.8, 1.0, 1.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 8 \) \\
+\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 160.0, 360.0, 0.0, 2.0, 151.0, 0.0, 0.8, 1.0, 0.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 20 \) \\
+\textnormal{Inputs: } \( (64.0, 0.0, 3.0, 140.0, 313.0, 0.0, 0.0, 133.0, 0.0, 0.2, 1.0, 0.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 31 \) \\
+\textnormal{Inputs: } \( (69.0, 1.0, 1.0, 160.0, 234.0, 1.0, 2.0, 131.0, 0.0, 0.1, 2.0, 1.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 33 \) \\
+\textnormal{Inputs: } \( (64.0, 0.0, 4.0, 180.0, 325.0, 0.0, 0.0, 154.0, 1.0, 0.0, 1.0, 0.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 48 \) \\
+\textnormal{Inputs: } \( (48.0, 0.0, 3.0, 130.0, 275.0, 0.0, 0.0, 139.0, 0.0, 0.2, 1.0, 0.0, 3.0) \) \\
+False Negative Found: 
+\textnormal{Index: } \( 69 \) \\
+\textnormal{Inputs: } \( (60.0, 1.0, 4.0, 117.0, 230.0, 1.0, 0.0, 160.0, 1.0, 1.4, 1.0, 2.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 77 \) \\
+\textnormal{Inputs: } \( (66.0, 0.0, 1.0, 150.0, 226.0, 0.0, 0.0, 114.0, 0.0, 2.6, 3.0, 0.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 114 \) \\
+\textnormal{Inputs: } \( (60.0, 0.0, 3.0, 120.0, 178.0, 1.0, 0.0, 96.0, 0.0, 0.0, 1.0, 0.0, 3.0) \) \\
+True Positives: 53
+True Negatives: 54
+False positives: 9
+False negatives: 1
+Total loss: 23.31131267461353
+Total items: 117
+------------------------
+Data set 1 test dataset 4
+------------------------
+False Positive Found: 
+\textnormal{Index: } \( 5 \) \\
+\textnormal{Inputs: } \( (67.0, 0.0, 3.0, 115.0, 564.0, 0.0, 2.0, 160.0, 0.0, 1.6, 2.0, 0.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 6 \) \\
+\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 140.0, 417.0, 1.0, 2.0, 157.0, 0.0, 0.8, 1.0, 1.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 8 \) \\
+\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 160.0, 360.0, 0.0, 2.0, 151.0, 0.0, 0.8, 1.0, 0.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 20 \) \\
+\textnormal{Inputs: } \( (64.0, 0.0, 3.0, 140.0, 313.0, 0.0, 0.0, 133.0, 0.0, 0.2, 1.0, 0.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 31 \) \\
+\textnormal{Inputs: } \( (69.0, 1.0, 1.0, 160.0, 234.0, 1.0, 2.0, 131.0, 0.0, 0.1, 2.0, 1.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 33 \) \\
+\textnormal{Inputs: } \( (64.0, 0.0, 4.0, 180.0, 325.0, 0.0, 0.0, 154.0, 1.0, 0.0, 1.0, 0.0, 3.0) \) \\
+False Negative Found: 
+\textnormal{Index: } \( 34 \) \\
+\textnormal{Inputs: } \( (53.0, 1.0, 4.0, 140.0, 203.0, 1.0, 2.0, 155.0, 1.0, 3.1, 3.0, 0.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 53 \) \\
+\textnormal{Inputs: } \( (74.0, 0.0, 2.0, 120.0, 269.0, 0.0, 2.0, 121.0, 1.0, 0.2, 1.0, 1.0, 3.0) \) \\
+False Negative Found: 
+\textnormal{Index: } \( 69 \) \\
+\textnormal{Inputs: } \( (60.0, 1.0, 4.0, 117.0, 230.0, 1.0, 0.0, 160.0, 1.0, 1.4, 1.0, 2.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 77 \) \\
+\textnormal{Inputs: } \( (66.0, 0.0, 1.0, 150.0, 226.0, 0.0, 0.0, 114.0, 0.0, 2.6, 3.0, 0.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 114 \) \\
+\textnormal{Inputs: } \( (60.0, 0.0, 3.0, 120.0, 178.0, 1.0, 0.0, 96.0, 0.0, 0.0, 1.0, 0.0, 3.0) \) \\
+True Positives: 52
+True Negatives: 54
+False positives: 9
+False negatives: 2
+Total loss: 23.891007156505278
+Total items: 117
+------------------------
+Data set 1 test dataset 5
+------------------------
+False Positive Found: 
+\textnormal{Index: } \( 5 \) \\
+\textnormal{Inputs: } \( (67.0, 0.0, 3.0, 115.0, 564.0, 0.0, 2.0, 160.0, 0.0, 1.6, 2.0, 0.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 6 \) \\
+\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 140.0, 417.0, 1.0, 2.0, 157.0, 0.0, 0.8, 1.0, 1.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 8 \) \\
+\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 160.0, 360.0, 0.0, 2.0, 151.0, 0.0, 0.8, 1.0, 0.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 20 \) \\
+\textnormal{Inputs: } \( (64.0, 0.0, 3.0, 140.0, 313.0, 0.0, 0.0, 133.0, 0.0, 0.2, 1.0, 0.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 31 \) \\
+\textnormal{Inputs: } \( (69.0, 1.0, 1.0, 160.0, 234.0, 1.0, 2.0, 131.0, 0.0, 0.1, 2.0, 1.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 33 \) \\
+\textnormal{Inputs: } \( (64.0, 0.0, 4.0, 180.0, 325.0, 0.0, 0.0, 154.0, 1.0, 0.0, 1.0, 0.0, 3.0) \) \\
+False Negative Found: 
+\textnormal{Index: } \( 34 \) \\
+\textnormal{Inputs: } \( (53.0, 1.0, 4.0, 140.0, 203.0, 1.0, 2.0, 155.0, 1.0, 3.1, 3.0, 0.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 48 \) \\
+\textnormal{Inputs: } \( (48.0, 0.0, 3.0, 130.0, 275.0, 0.0, 0.0, 139.0, 0.0, 0.2, 1.0, 0.0, 3.0) \) \\
+False Negative Found: 
+\textnormal{Index: } \( 69 \) \\
+\textnormal{Inputs: } \( (60.0, 1.0, 4.0, 117.0, 230.0, 1.0, 0.0, 160.0, 1.0, 1.4, 1.0, 2.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 77 \) \\
+\textnormal{Inputs: } \( (66.0, 0.0, 1.0, 150.0, 226.0, 0.0, 0.0, 114.0, 0.0, 2.6, 3.0, 0.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 91 \) \\
+\textnormal{Inputs: } \( (76.0, 0.0, 3.0, 140.0, 197.0, 0.0, 1.0, 116.0, 0.0, 1.1, 2.0, 0.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 114 \) \\
+\textnormal{Inputs: } \( (60.0, 0.0, 3.0, 120.0, 178.0, 1.0, 0.0, 96.0, 0.0, 0.0, 1.0, 0.0, 3.0) \) \\
+True Positives: 52
+True Negatives: 53
+False positives: 10
+False negatives: 2
+Total loss: 31.41886183116968
+Total items: 117
+------------------------
+Data set 1 test dataset 6
+------------------------
+False Positive Found: 
+\textnormal{Index: } \( 5 \) \\
+\textnormal{Inputs: } \( (67.0, 0.0, 3.0, 115.0, 564.0, 0.0, 2.0, 160.0, 0.0, 1.6, 2.0, 0.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 6 \) \\
+\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 140.0, 417.0, 1.0, 2.0, 157.0, 0.0, 0.8, 1.0, 1.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 20 \) \\
+\textnormal{Inputs: } \( (64.0, 0.0, 3.0, 140.0, 313.0, 0.0, 0.0, 133.0, 0.0, 0.2, 1.0, 0.0, 7.0) \) \\
+False Negative Found: 
+\textnormal{Index: } \( 25 \) \\
+\textnormal{Inputs: } \( (66.0, 0.0, 4.0, 178.0, 228.0, 1.0, 0.0, 165.0, 1.0, 1.0, 2.0, 2.0, 7.0) \) \\
+False Negative Found: 
+\textnormal{Index: } \( 34 \) \\
+\textnormal{Inputs: } \( (53.0, 1.0, 4.0, 140.0, 203.0, 1.0, 2.0, 155.0, 1.0, 3.1, 3.0, 0.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 53 \) \\
+\textnormal{Inputs: } \( (74.0, 0.0, 2.0, 120.0, 269.0, 0.0, 2.0, 121.0, 1.0, 0.2, 1.0, 1.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 60 \) \\
+\textnormal{Inputs: } \( (71.0, 0.0, 3.0, 110.0, 265.0, 1.0, 2.0, 130.0, 0.0, 0.0, 1.0, 1.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 77 \) \\
+\textnormal{Inputs: } \( (66.0, 0.0, 1.0, 150.0, 226.0, 0.0, 0.0, 114.0, 0.0, 2.6, 3.0, 0.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 102 \) \\
+\textnormal{Inputs: } \( (65.0, 1.0, 4.0, 120.0, 177.0, 0.0, 0.0, 140.0, 0.0, 0.4, 1.0, 0.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 114 \) \\
+\textnormal{Inputs: } \( (60.0, 0.0, 3.0, 120.0, 178.0, 1.0, 0.0, 96.0, 0.0, 0.0, 1.0, 0.0, 3.0) \) \\
+True Positives: 52
+True Negatives: 55
+False positives: 8
+False negatives: 2
+Total loss: 16.247427541193762
+Total items: 117
+------------------------
+Averaged Weight Vector
+------------------------
+\( w_{0} \rightarrow 0.03770903915138822 \) \\
+\( w_{1} \rightarrow -0.041178942494859094 \) \\
+\( w_{2} \rightarrow 0.17274616057058972 \) \\
+\( w_{3} \rightarrow 0.13148707571728 \) \\
+\( w_{4} \rightarrow 0.06475623501863624 \) \\
+\( w_{5} \rightarrow 0.030680548706339232 \) \\
+\( w_{6} \rightarrow 0.032487241176698975 \) \\
+\( w_{7} \rightarrow -0.12672389222628322 \) \\
+\( w_{8} \rightarrow -0.13156694037154992 \) \\
+\( w_{9} \rightarrow 0.08926847383363394 \) \\
+\( w_{10} \rightarrow 0.17649885545001573 \) \\
+\( w_{11} \rightarrow -0.004544798237466599 \) \\
+\( w_{12} \rightarrow 0.3980499596908348 \) \\
+\( w_{13} \rightarrow 0.8258489971867217 \) \\
+------------------------
+Data set 1 test
+------------------------
+False Positive Found: 
+\textnormal{Index: } \( 5 \) \\
+\textnormal{Inputs: } \( (67.0, 0.0, 3.0, 115.0, 564.0, 0.0, 2.0, 160.0, 0.0, 1.6, 2.0, 0.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 6 \) \\
+\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 140.0, 417.0, 1.0, 2.0, 157.0, 0.0, 0.8, 1.0, 1.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 8 \) \\
+\textnormal{Inputs: } \( (65.0, 0.0, 3.0, 160.0, 360.0, 0.0, 2.0, 151.0, 0.0, 0.8, 1.0, 0.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 20 \) \\
+\textnormal{Inputs: } \( (64.0, 0.0, 3.0, 140.0, 313.0, 0.0, 0.0, 133.0, 0.0, 0.2, 1.0, 0.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 31 \) \\
+\textnormal{Inputs: } \( (69.0, 1.0, 1.0, 160.0, 234.0, 1.0, 2.0, 131.0, 0.0, 0.1, 2.0, 1.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 33 \) \\
+\textnormal{Inputs: } \( (64.0, 0.0, 4.0, 180.0, 325.0, 0.0, 0.0, 154.0, 1.0, 0.0, 1.0, 0.0, 3.0) \) \\
+False Negative Found: 
+\textnormal{Index: } \( 34 \) \\
+\textnormal{Inputs: } \( (53.0, 1.0, 4.0, 140.0, 203.0, 1.0, 2.0, 155.0, 1.0, 3.1, 3.0, 0.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 53 \) \\
+\textnormal{Inputs: } \( (74.0, 0.0, 2.0, 120.0, 269.0, 0.0, 2.0, 121.0, 1.0, 0.2, 1.0, 1.0, 3.0) \) \\
+False Negative Found: 
+\textnormal{Index: } \( 69 \) \\
+\textnormal{Inputs: } \( (60.0, 1.0, 4.0, 117.0, 230.0, 1.0, 0.0, 160.0, 1.0, 1.4, 1.0, 2.0, 7.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 77 \) \\
+\textnormal{Inputs: } \( (66.0, 0.0, 1.0, 150.0, 226.0, 0.0, 0.0, 114.0, 0.0, 2.6, 3.0, 0.0, 3.0) \) \\
+False Positive Found: 
+\textnormal{Index: } \( 114 \) \\
+\textnormal{Inputs: } \( (60.0, 0.0, 3.0, 120.0, 178.0, 1.0, 0.0, 96.0, 0.0, 0.0, 1.0, 0.0, 3.0) \) \\
+True Positives: 52
+True Negatives: 54
+False positives: 9
+False negatives: 2
+Total loss: 22.263379141433237
+Total items: 117
+
