@@ -1,0 +1,1041 @@
+\input{cs440_style.tex}
+\usepackage{algorithm}
+\usepackage{listings}
+%\usepackage{algpseudocode}
+\usepackage{graphicx,amssymb,amsmath}
+\usepackage{epstopdf}
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{listings}
+\lstset{ %
+language=pascal,                % choose the language of the code
+basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+numbersep=5pt,                  % how far the line-numbers are from the code
+backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=single,           % adds a frame around the code
+tabsize=2,          % sets default tabsize to 2 spaces
+captionpos=b,           % sets the caption-position to bottom
+breaklines=true,        % sets automatic line breaking
+breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+escapeinside={\%*}{*)}          % if you want to add a comment within your code
+}
+
+\sloppy
+
+
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in
+\topmargin -0.5in
+\textheight 9.0in
+
+\begin{document}
+
+\solution{Dan McQuillan}{\today}{5}{Spring 2014}
+
+\pagestyle{myheadings}  % Leave this command alone
+
+\begin{enumerate}
+
+	\item{\bf{Problem 1}}
+	
+		\(
+		\begin{array}{l|l}
+			\text{\bf{Attribute}} & \text{\bf{Values}} \\
+			\hline
+			\text{Chest Pain(CPT)} & AP, NA, NP \\
+			\text{Fasting Blood Sugar(FBS)} & 1,0 > 120mg \\
+			\text{Max Heart Rate Achieved(MHRA)} & L, A, H \\
+			\text{Number major vessels(NMV)} & 0, 1, 2, 3 \\
+			\text{Heart Disease(HD)} & 0, 1 \\
+		\end{array}
+		\)
+
+		\begin{enumerate}
+			\item{Iteration 1:}
+				
+				Information Before:
+				
+				\[
+					8+,8-
+				\]
+				
+				\[
+					H(\frac{1}{2}) = - \frac{1}{2} \log_2 \frac{1}{2} - \frac{1}{2} \log_2 \frac{1}{2} = 1
+				\]
+			
+				Information After:
+				
+				\begin{enumerate}
+				
+					\item{CPT:} \\
+					
+						\[
+							\begin{array}{l|l}
+								AP: 1+, 3- & H(\frac{1}{4}) = - \frac{1}{4} \log_2 \frac{1}{4} - \frac{3}{4} \log_2 \frac{3}{4} \approx 0.811278 \\
+								NA: 1+, 4- & H(\frac{1}{5}) = - \frac{1}{5} \log_2 \frac{1}{5} - \frac{4}{5} \log_2 \frac{4}{5} \approx 0.721928 \\
+								NP: 6+, 1- & H(\frac{6}{7}) = - \frac{6}{7} \log_2 \frac{6}{7} - \frac{1}{7} \log_2 \frac{1}{7} \approx 0.5916728 \\
+							\end{array}
+						\] 
+						
+						\[
+							\frac{1}{4} \cdot 0.811278 + \frac{5}{16} \cdot 0.721928 + \frac{7}{16} \cdot 0.5916728 \approx 0.6872789
+						\]
+						
+						\[
+							Gain(CPT) = 1 - 0.6872789 \approx 0.31272115
+						\]
+					
+					\item{FBS:}
+
+						\[
+							\begin{array}{l|l}
+								0: 2+, 1- & H(\frac{2}{3}) = - \frac{2}{3} \log_2 \frac{2}{3} - \frac{1}{3} \log_2 \frac{1}{3} \approx 0.918296 \\
+								1: 6+, 1- & H(\frac{6}{7}) = - \frac{6}{7} \log_2 \frac{6}{7} - \frac{1}{7} \log_2 \frac{1}{7} \approx 0.5916728 \\
+							\end{array}
+						\] 
+						
+						\[
+							\frac{3}{16} \cdot 0.918296 + \frac{13}{16} \cdot 0.5916728 \approx 0.65291465
+						\]
+						
+						\[
+							Gain(FBS) = 1 - 0.65291465 \approx 0.34708535
+						\]
+
+					\item{MHRA:}
+
+						\[
+							\begin{array}{l|l}
+								L: 4+, 1- & H(\frac{1}{5}) = - \frac{1}{5} \log_2 \frac{1}{5} - \frac{4}{5} \log_2 \frac{4}{5} \approx 0.721928 \\
+								A: 3+, 5- & H(\frac{3}{8}) = - \frac{3}{8} \log_2 \frac{3}{8} - \frac{5}{8} \log_2 \frac{5}{8} \approx 0.954434 \\
+								H: 1+, 2- & H(\frac{1}{3}) = - \frac{1}{3} \log_2 \frac{1}{3} - \frac{2}{3} \log_2 \frac{2}{3} \approx 0.918295834 \\
+							\end{array}
+						\] 
+						
+						\[
+							\frac{5}{16} \cdot 0.721928 + \frac{1}{2} \cdot 0.954434 + \frac{3}{16} \cdot 0.918295834 \approx 0.875
+						\]
+						
+						\[
+							Gain(MHRA) = 1 - 0.875 \approx 0.125
+						\]
+
+					\item{NMV:}
+					
+
+						\[
+							\begin{array}{l|l}
+								0: 1+, 6- & H(\frac{1}{7}) = - \frac{1}{7} \log_2 \frac{1}{7} - \frac{6}{7} \log_2 \frac{6}{7} \approx 0.5916728 \\
+								1: 3+, 2- & H(\frac{3}{5}) = - \frac{3}{5} \log_2 \frac{3}{5} - \frac{2}{5} \log_2 \frac{2}{5} \approx 0.970951 \\
+								2: 2+, 0- & H = 0 \\
+								3: 2+, 0- & H = 0 \\
+							\end{array}
+						\] 
+						
+						\[
+							\frac{7}{16} \cdot 0.591673 + \frac{5}{16} \cdot 0.970951 + 0 + 0 \approx 0.5622789
+						\]
+						
+						\[
+							Gain(MHRA) = 1 - 0.5622789 \approx 0.4377211
+						\]
+				
+				\end{enumerate}
+			
+				Choose NVM
+				
+				Resultant Decision Tree:
+			
+				\begin{lstlisting}
+					if <NMV> = 0 :
+						<class> = 0
+					if <NMV> = 1 :
+						<class> = 1
+					if <NMV> = 2 :
+						<class> = 1
+					if <NMV> = 3 :
+						<class> = 1
+				\end{lstlisting}
+			
+			\item{Iteration 2:}
+			
+				Information Before:
+				
+				\[
+					H = \left\{ \begin{array}{ll}
+						0 & \rightarrow 0.591673 \\
+						1 & \rightarrow 0.970951 \\
+					\end{array} \right\}
+				\]
+			
+				Information After:
+				
+				\begin{enumerate}
+				
+					\item{CPT:} \\
+						
+						\begin{enumerate}
+						
+							\item{\(NMV_0\)}
+							\[
+								\begin{array}{l|l}
+									AP: 0+,2- & H= 0 \\
+									NA: 0+, 3- & H= 0 \\
+									NP: 1+, 1- & H = 1 \\
+								\end{array}
+							\] 
+							
+							\[
+								Gain(CPT) = 0.591673 - \frac{2}{7} \approx 0.3059585
+							\]
+							
+							\item{\(NMV_1\)}
+							\[
+								\begin{array}{l|l}
+									AP: 1+, 1- & H= 1 \\
+									NA: 1+, 1- & H= 1 \\
+									NP: 1+, 0- & H = 0 \\
+								\end{array}
+							\] 
+							
+							\[
+								Gain(CPT) = 0.970951 - \frac{2}{5} - \frac{2}{5} \approx 0.17095
+							\]
+							
+						\end{enumerate}
+
+					\item{FBS:} \\
+						
+						\begin{enumerate}
+						
+							\item{\(NMV_0\)}
+							\[
+								\begin{array}{l|l}
+									0: 0+, 5- & H= 0 \\
+									1: 1+, 1- & H= 1 \\
+								\end{array}
+							\] 
+							
+							\[
+								Gain(FBS) = 0.591673 - \frac{2}{7} \approx 0.3059585
+							\]
+							
+							\item{\(NMV_1\)}
+							\[
+								\begin{array}{l|l}
+									0: 3+, 2- & H= - \frac{3}{5} \log_2 \frac{3}{5} - \frac{2}{5} \log_2 \frac{2}{5} \approx 0.9709505945  \\
+									1: 1+, 1- & H= 1 \\
+								\end{array}
+							\] 
+							
+							\[
+								Gain(FBS) = 0.970951 - 0.9709505945 \approx 0.0
+							\]
+							
+						\end{enumerate}
+					
+					\item{MHRA:} \\
+						
+						\begin{enumerate}
+						
+							\item{\(NMV_0\)}
+							\[
+								\begin{array}{l|l}
+									L: 0+, 1- & H= 0 \\
+									A: 1+, 3- & H \approx 0.81127812 \\
+									H: 0+, 2- & H= 0 \\
+								\end{array}
+							\] 
+							
+							\[
+								Gain(MHRA) = 0.591673 - \frac{4}{7} \cdot 0.81127812 \approx 0.1280853
+							\]
+							
+							\item{\(NMV_1\)}
+							\[
+								\begin{array}{l|l}
+									L: 2+, 0- & H= 0 \\
+									A: 1+, 2- & H \approx 0.9182958 \\
+									H: 0+, 0- & H= 0 \\
+								\end{array}
+							\] 
+							
+							\[
+								Gain(MHRA) = 0.970951 - \frac{3}{5} \cdot 0.9182958 \approx 0.41997311
+							\]
+							
+						\end{enumerate}
+					
+				\end{enumerate}
+				
+				Choose MHRA
+				
+				Resultant Decision Tree:
+			
+				\begin{lstlisting}
+					if <NMV> = 0 :
+						<class> = 0
+					if <NMV> = 1 :
+						if <MHRA> = L :
+							<class> = 1
+						if <MHRA> = A :
+							<class> = 0
+						if <MHRA> = H :
+							<class> = 1
+					if <NMV> = 2 :
+						<class> = 1
+					if <NMV> = 3 :
+						<class> = 1
+				\end{lstlisting}
+				
+			\item{Iteration 3:}
+			
+				Information Before:
+				
+					\begin{enumerate}
+					
+						\item{\(NMV_0\)}
+						
+							\[
+								H = 0.591673
+							\]
+							
+						\item{ \(MHRA\) }
+						
+							\[
+								H \approx 0.9182958
+							\]
+							
+					\end{enumerate}
+				
+				Information After:
+				
+					\begin{enumerate}
+					
+						\item{\(NMV_0\)}
+						
+							\[
+								Gain(CPT) \approx 0.3059585
+							\]			
+							\[
+								Gain(FBS) \approx 0.3059585
+							\]
+							
+						\item{\(MHRA\)}
+						
+							\begin{enumerate}
+							
+								\item{CPT:}
+								
+									\[
+										\begin{array}{l|l}
+											AP: 0+, 1- & H = 0 \\
+											NA: 0+, 1- & H = 0 \\
+											NP: 1+, 0- & H = 0 \\
+										\end{array}
+									\]
+									
+									\[
+										Gain(CPT) \approx 0.9182958
+									\]
+								
+								\item{FBS:}
+							
+									\[
+										\begin{array}{l|l}
+											0: 1+, 2- & H = 0.918295834 \\
+											1: 0+, 0- & H = 0 \\
+										\end{array}
+									\]
+									
+									\[
+										Gain(CPT) = 0.0
+									\]
+
+							\end{enumerate}
+						
+					\end{enumerate}
+					
+				Choose CPT
+				
+				Resultant Decision Tree:
+				
+				\begin{lstlisting}
+					if <NMV> = 0 :
+						if <FBS> = 0 :
+							<class> = 0
+						if <FBS> = 1 :
+							<class> = 0
+					if <NMV> = 1 :
+						if <MHRA> = L :
+							<class> = 1
+						if <MHRA> = A :
+							if <CPT> = AP :
+								<class> = 0
+							if <CPT> = NA :
+								<class> = 0
+							if <CPT> = NP :
+								<class> = 1
+						if <MHRA> = H :
+							<class> = 1
+					if <NMV> = 2 :
+						<class> = 1
+					if <NMV> = 3 :
+						<class> = 1
+				\end{lstlisting}
+		
+		\end{enumerate}
+		
+		Accuracy on Table 2:
+		
+		\[
+			\begin{array}{c|l}
+				\text{Index} & \text{Classification} \\
+				\hline
+				1 & 1 \rightarrow \text{False Positive} \\
+				2 & 1 \\
+				3 & 0 \\
+				4 & 0 \\  
+				5 & 1 \\
+				6 & 1 \rightarrow \text{False Positive} \\
+				7 & 1 \\
+				8 & 1 \\
+			\end{array}
+		\]
+		
+		Confusion Matrix:
+		
+		\[
+			\begin{array}{|c|c|}
+				\hline
+				4 & 0 \\
+				\hline
+				2 & 2 \\
+				\hline
+			\end{array}
+		\]
+		
+		Accuracy: \( \frac{6}{8} = 75\% \)
+		
+	\item{\bf{Problem 2}}
+
+		\begin{enumerate}
+		
+			\item
+			
+				Depth 1:
+				
+				Current Tree:
+				
+				\begin{lstlisting}
+					if <NMV> = 0 :
+						<class> = 0
+					if <NMV> = 1 :
+						<class> = 1
+					if <NMV> = 2 :
+						<class> = 1
+					if <NMV> = 3 :
+						<class> = 1
+				\end{lstlisting}
+
+				\[
+					\begin{array}{c|l}
+						\text{Index} & \text{Classification} \\
+						\hline
+						1 & 1 \rightarrow \text{False Positive} \\
+						2 & 1 \\
+						3 & 1 \rightarrow \text{False Positive} \\
+						4 & 0 \\  
+						5 & 1 \\
+						6 & 1 \rightarrow \text{False Positive} \\
+						7 & 1 \\
+						8 & 1 \\
+					\end{array}
+				\]
+		
+				Accuracy: \( 62.5\% \)
+			
+			
+				Depth 2:
+				
+				Current Tree:
+				
+				\begin{lstlisting}
+					if <NMV> = 0 :
+						<class> = 0
+					if <NMV> = 1 :
+						if <MHRA> = L :
+							<class> = 1
+						if <MHRA> = A :
+							<class> = 0
+						if <MHRA> = H :
+							<class> = 1
+					if <NMV> = 2 :
+						<class> = 1
+					if <NMV> = 3 :
+						<class> = 1
+				\end{lstlisting}
+				
+				
+				\[
+					\begin{array}{c|l}
+						\text{Index} & \text{Classification} \\
+						\hline
+						1 & 0 \\
+						2 & 1 \\
+						3 & 0 \\
+						4 & 0 \\  
+						5 & 1 \\
+						6 & 1 \rightarrow \text{False Positive} \\
+						7 & 1 \\
+						8 & 1 \\
+					\end{array}
+				\]
+		
+				Accuracy: \( 87.5\% \)
+
+			
+				Depth 3:
+				
+				Current Tree:
+				
+				\begin{lstlisting}
+					if <NMV> = 0 :
+						<class> = 0
+					if <NMV> = 1 :
+						if <MHRA> = L :
+							<class> = 1
+						if <MHRA> = A :
+							if <CPT> = AP :
+								<class> = 0
+							if <CPT> = NA :
+								<class> = 0
+							if <CPT> = NP :
+								<class> = 1
+						if <MHRA> = H :
+							<class> = 1
+					if <NMV> = 2 :
+						<class> = 1
+					if <NMV> = 3 :
+						<class> = 1
+				\end{lstlisting}
+				
+				\[
+					\begin{array}{c|l}
+						\text{Index} & \text{Classification} \\
+						\hline
+						1 & 1 \rightarrow \text{False Positive} \\
+						2 & 1 \\
+						3 & 0 \\
+						4 & 0 \\  
+						5 & 1 \\
+						6 & 1 \rightarrow \text{False Positive} \\
+						7 & 1 \\
+						8 & 1 \\
+					\end{array}
+				\]
+		
+				Accuracy: \( 75\% \) \\
+			
+			
+			\item Reduced Error Pruning
+			
+				\begin{enumerate}
+				
+					\item{FBS node}
+					
+						\[
+							\begin{array}{c|l|l}
+								\text{Index} & \text{Classification} & \text{Classification After Pruning} \\
+								\hline
+								1 & 0 & 0 \\
+								2 & 0 & 0 \\
+								3 & 0 \rightarrow \text{false negative} & 0 \rightarrow \text{false negative} \\
+								4 & 1 & 1 \\
+								5 & 0 & 0 \\
+							\end{array}
+						\]
+						
+						Prune leaf with class 0
+					
+					\item{CPT node}
+					
+						\[
+							\begin{array}{c|l|l}
+								\text{Index} & \text{Classification} & \text{Classification After Pruning} \\
+								\hline
+								1 & 0 & 0 \\
+								2 & 0 & 0 \\
+								3 & 0 \rightarrow \text{false negative} & 0 \rightarrow \text{false negative} \\
+								4 & 1 & 1 \\
+								5 & 0 & 0 \\
+							\end{array}
+						\]
+						
+						Prune leaf with class 0
+					
+					\item{MHRA node}
+					
+						\[
+							\begin{array}{c|l|l}
+								\text{Index} & \text{Classification} & \text{Classification After Pruning} \\
+								\hline
+								1 & 0 & 0 \\
+								2 & 0 & 0 \\
+								3 & 0 \rightarrow \text{false negative} & 0 \rightarrow \text{false negative} \\
+								4 & 1 & 0 \rightarrow \text{false negative} \\
+								5 & 0 & 1 \rightarrow \text{false positive}  \\
+							\end{array}
+						\]
+						
+						Do not prune leaf
+					
+					\item{NMV node}
+					
+						\[
+							\begin{array}{c|l|l}
+								\text{Index} & \text{Classification} & \text{Classification After Pruning} \\
+								\hline
+								1 & 0 & 0 \\
+								2 & 0 & 0 \\
+								3 & 0 \rightarrow \text{false negative} & 0 \rightarrow \text{false negative} \\
+								4 & 1 & 1 \\
+								5 & 0 & 1 \rightarrow \text{false positive} \\
+							\end{array}
+						\]
+				
+						Do not prune leaf
+				
+				\end{enumerate}
+				
+				Resultant Tree:
+				
+				\begin{lstlisting}
+					if <NMV> = 0 :
+						<class> = 0
+					if <NMV> = 1 :
+						if <MHRA> = L :
+							<class> = 1
+						if <MHRA> = A :
+							<class> = 0
+						if <MHRA> = H :
+							<class> = 1
+					if <NMV> = 2 :
+						<class> = 1
+					if <NMV> = 3 :
+						<class> = 1
+				\end{lstlisting}
+
+				
+				Accuracy on Table 2:
+				
+				\[
+					\begin{array}{c|l}
+						\text{Index} & \text{Classification} \\
+						\hline
+						1 & 0 \\
+						2 & 1 \\
+						3 & 0 \\
+						4 & 0 \\  
+						5 & 1 \\
+						6 & 1 \rightarrow \text{False Positive} \\
+						7 & 1 \\
+						8 & 1 \\
+					\end{array}
+				\]
+				
+				Confusion Matrix:
+				
+				\[
+					\begin{array}{|c|c|}
+						\hline
+						4 & 0 \\
+						\hline
+						1 & 3 \\
+						\hline
+					\end{array}
+				\]
+				
+				Accuracy: \( 87.5\% \)
+
+		\end{enumerate}
+
+	\item{\bf{Problem 3}}
+	
+		Information Before:
+		
+		\[
+			10+, 10- 
+		\]
+		\[
+			H(\frac{1}{2}) = 1
+		\]
+		
+		\begin{enumerate}
+		
+			\item{Iteration 1}
+			
+				Information After
+		
+				\begin{enumerate}
+				
+					\item{CPT:} \\
+						
+						Let example 20 have a value of "NP" based on the following frequencies: \\
+						NA: 5, NP: 9, AP: 5
+						
+						\[
+							\begin{array}{l|l}
+								AP: 1+, 4- & H \approx 0.721928 \\
+								NA: 1+, 4- & H \approx 0.721928 \\
+								NP: 8+, 2- & H \approx 0.721928 \\
+							\end{array}
+						\] 
+						
+						\[
+							Gain(CPT) \approx 0.278072
+						\]
+					
+					\item{FBS:}
+					
+						Let example 17 have a value of "0" based on the following frequencies: \\
+						0: 14, 1: 5
+
+						\[
+							\begin{array}{l|l}
+								0: 2+, 2- & H \approx 1 \\
+								1: 6+, 7- & H \approx 0.9957275 \\
+							\end{array}
+						\] 
+						
+						\[
+							Gain(FBS) \approx 0.152777125
+						\]
+
+					\item{MHRA:}
+					
+						Let examples 18 and 19 have a value of "A" based on the following frequencies: \\
+						L: 5, A: 6, H: 5
+
+						\[
+							\begin{array}{l|l}
+								L: 4+, 1- & H \approx 0.721928 \\
+								A: 4+, 6- & H \approx 0.970951 \\
+								H: 2+, 3- & H \approx 0.970951 \\
+							\end{array}
+						\] 
+						
+						\[
+							Gain(MHRA) \approx 0.278072
+						\]
+
+					\item{NMV:}
+					
+						Let examples 18 and 19 have a value of "A" based on the following frequencies: \\
+						L: 5, A: 6, H: 5
+
+						\[
+							\begin{array}{l|l}
+								0: 1+, 7- & H \approx 0.54356444 \\
+								1: 3+, 2- & H \approx 0.970951 \\
+								2: 3+, 1- & H \approx 0.811278 \\
+								3: 3+, 0- & H = 0 \\
+							\end{array}
+						\] 
+						
+						\[
+							Gain(MHRA) \approx 0.377580874
+						\]
+				
+				\end{enumerate}
+			
+				Choose NMV
+				
+				Resultant Decision Tree:
+				
+				\begin{lstlisting}
+					if <NMV> = 0 :
+						<class> = 0
+					if <NMV> = 1 :
+						<class> = 1
+					if <NMV> = 2 :
+						<class> = 1
+					if <NMV> = 3 :
+						<class> = 1
+				\end{lstlisting}
+						
+		\end{enumerate}
+		
+		Information Before:
+		
+		\[
+			1+, 8- 
+		\]
+		\[
+			H \approx 0.543564
+		\]
+		
+		\begin{enumerate}
+		
+			\item{Iteration 1}
+			
+				Information After
+				
+				\begin{enumerate}
+				
+					\item{\( NMV_0 \) }
+				
+						\begin{enumerate}
+							
+							\item{CPT:}
+							
+								\[
+									\begin{array}{l|l}
+										AP: 0+, 2- & H = 0 \\
+										NA: 0+, 3- & H = 0 \\
+										NP: 1+, 2- & H = 0.918295834 \\
+									\end{array}
+								\]
+								
+								\[
+									Gain(CBT) \approx 0.19920344
+								\]
+						
+							\item{FBS:}
+							
+								Let examples 17 have a value of "0" based on the following frequencies: \\
+								0: 5, 1: 2
+								
+								\[
+									\begin{array}{l|l}
+										0: 0+, 6- & H = 0 \\
+										1: 1+, 1- & H = 1
+									\end{array}
+								\]
+								
+								\[
+									Gain(FBS) \approx 0.293564
+								\]
+							
+							\item{MHRA:}
+								
+								\[
+									\begin{array}{l|l}
+										L: 0+, 1- & H = 0 \\
+										A: 1+, 3- & H = 0.81127812 \\
+										H: 0+, 3- & H = 0
+									\end{array}
+								\]
+								
+								\[
+									Gain(MHRA) \approx 0.137925381
+								\]
+						
+						\end{enumerate}
+				
+					\item{\( NMV_1 \) }
+				
+						\begin{enumerate}
+							
+							\item{CPT:}
+							
+								\[
+									\begin{array}{l|l}
+										AP: 1+, 1- & H = 1 \\
+										NA: 1+, 1- & H = 1 \\
+										NP: 1+, 0- & H = 0 \\
+									\end{array}
+								\]
+								
+								\[
+									Gain(CBT) \approx 0.17095
+								\]
+						
+							\item{FBS:}
+								
+								\[
+									\begin{array}{l|l}
+										0: 3+, 2- & H = 0.970951 \\
+										1: 0+, 0- & H = 0
+									\end{array}
+								\]
+								
+								\[
+									Gain(FBS) \approx 0.0
+								\]
+							
+							\item{MHRA:}
+								
+								\[
+									\begin{array}{l|l}
+										L: 2+, 0- & H = 0 \\
+										A: 1+, 2- & H = 0.9182958 \\
+										H: 0+, 0- & H = 0
+									\end{array}
+								\]
+								
+								\[
+									Gain(MHRA) \approx 0.41997252
+								\]
+						
+						\end{enumerate}
+				
+					\item{\( NMV_2 \) }
+				
+						\begin{enumerate}
+							
+							\item{CPT:}
+
+								Let example 20 have a value of "NP" based on the following frequencies: \\
+								AP: 1, NA: 0, NP: 2
+							
+								\[
+									\begin{array}{l|l}
+										AP: 0+, 1- & H = 0 \\
+										NA: 0+, 0- & H = 0 \\
+										NP: 3+, 0- & H = 0 \\
+									\end{array}
+								\]
+								
+								\[
+									Gain(CBT) \approx 0.97095
+								\]
+								
+								Since this has the maximum gain possible for this branch we will choose CPT to attach to \( NMV_2 \)
+								
+								This will result in the following tree:
+								
+								\begin{lstlisting}
+									if <NMV> = 0 :
+										<class> = 0
+									if <NMV> = 1 :
+										if <MHRA> = L :
+											<class> = 1
+										if <MHRA> = A :
+											<class> = 0
+										if <MHRA> = H :
+											<class> = 1
+									if <NMV> = 2 :
+										if <CPT> = AP :
+											<class> = 0
+										if <CPT> = NA :
+											<class> = 1
+										if <CPT> = NP :
+											<class> = 1
+									if <NMV> = 3 :
+										<class> = 1
+								\end{lstlisting}
+												
+						\end{enumerate}
+				
+				\end{enumerate}
+				
+				
+				\begin{enumerate}
+				
+					\item{\(MHRA_A\)}
+					
+						Before Information
+						
+							\[
+								H = 0.9182958
+							\]
+							
+						After Information
+						
+						\begin{enumerate}
+						
+							\item{FBS:}
+															
+								\[
+									\begin{array}{l|l}
+										0: 1+, 2- & H = 0.9182958 \\
+										1: 0+, 0- & H = 0
+									\end{array}
+								\]
+								
+								\[
+									Gain(FBS) \approx 0.0
+								\]
+								
+						\end{enumerate}
+					
+						
+					\item{\(NMV_0\)}
+					
+						Before Information
+						
+							\[
+								H = 0.543564
+							\]
+						
+						After Information
+							
+						\begin{enumerate}
+						
+							\item{FBS:}
+							
+								Let examples 17 have a value of "0" based on the following frequencies: \\
+								0: 5, 1: 2
+								
+								\[
+									\begin{array}{l|l}
+										0: 0+, 6- & H = 0 \\
+										1: 1+, 1- & H = 1
+									\end{array}
+								\]
+								
+								\[
+									Gain(FBS) \approx 0.293564
+								\]
+								
+						\end{enumerate}
+						
+					Choose FBS at \(NMV_0\) which gives the following tree:
+					
+					\begin{lstlisting}
+						if <NMV> = 0 :
+							if <FBS> = 0 :
+								<class> = 0
+							if <FBS> = 1 :
+								<class> = 0
+						if <NMV> = 1 :
+							if <MHRA> = L :
+								<class> = 1
+							if <MHRA> = A :
+								<class> = 0
+							if <MHRA> = H :
+								<class> = 1
+						if <NMV> = 2 :
+							if <CPT> = AP :
+								<class> = 0
+							if <CPT> = NA :
+								<class> = 1
+							if <CPT> = NP :
+								<class> = 1
+						if <NMV> = 3 :
+							<class> = 1
+					\end{lstlisting}
+	
+
+				\end{enumerate}
+				
+		\end{enumerate}
+
+\end{enumerate}
+
+
+
+\end{document}
+

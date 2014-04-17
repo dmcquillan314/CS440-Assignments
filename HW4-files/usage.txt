@@ -1,0 +1,3 @@
+cs440_style.tex is the style file, do not edit this
+
+Write your homework in hw-template.tex after modifiying the required parameters such as homework number, name, etc.

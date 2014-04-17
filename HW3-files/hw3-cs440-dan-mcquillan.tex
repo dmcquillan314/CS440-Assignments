@@ -66,10 +66,10 @@
 					P(D = d_1 | T = t_1) = \alpha \left< 0.97 (0.000125), (1 - 0.97)(1 - \frac{1}{8000} \right>
 				\]
 				\[
-					P(D = d_1 | T = t_1) = \alpha \left< 0.00012125, 0.02999625 \right> \cdot \frac{1}{0.00012125 + 0.02999625}
+					P(D = d_1 | T = t_1) = \left< 0.00012125, 0.02999625 \right> \cdot \frac{1}{0.00012125 + 0.02999625}
 				\]
 				\[
-					P(D = d_1 | T = t_1) = \alpha \left<0.00402589856395783, 0.995974101436042 \right>
+					P(D = d_1 | T = t_1) = \left<0.00402589856395783, 0.995974101436042 \right>
 				\]
 				\[
 					P(D = d_1 | T = t_1) = 0.00402589856395783
@@ -270,7 +270,8 @@
 					(I) edge [bend left] node {} (O);
 			\end{tikzpicture}
 		
-		\item{} This structure is a polytree since it is a directed, acyclic graph. This is because for every vertex there is no way to get back to vertex v.
+		\item{} This structure is a polytree since it is a directed, acyclic graph. This is because for every vertex there is no way to get back to vertex v.  There relative difficulty will be similar for both structures since they are both polytrees.  However, the structure in problem 2 may have a larger algorithmic complexity to traverse the whole tree.
+		
 		\item{} 287 parameters are needed for the full joint probability.
 		\item{} Baye's net parameters: \\
 	
@@ -453,7 +454,7 @@
 				P(E|\neg C) = 0.27
 			\) \\ 
 		
-		\item{} Express P(D | B) using the probabilities you calculated \\
+		\item{} Express \(P(D |  B)\) using the probabilities you calculated \\
 		
 			\(
 				\begin{array}{ll}
@@ -496,21 +497,28 @@
 					
 					\(
 						\begin{array}{ll}
-							P(D | B) & = \Sigma_{a \in A} \Sigma_{c \in C} P(A,B,C,D) \\ \\
+							P(B | A) & = \Sigma_{a \in A} \Sigma_{c \in C} P(A,B,C,D) \\ \\
 								      & = \Sigma_{a \in A} \Sigma_{c \in C} P(A)P(B)P(C | A)P(D | B,C) \\ \\
 								      & = P(A)P(B) \Sigma_{c \in C} \Sigma_{d \in D} P(C | A)P(D | B,C) \\ \\
 								      & = P(A)P(B) [ P(c | A) P(d | B, c) + P(c | A) P(\neg d | B, c) \\
 								      & \hspace{4mm} +P(\neg c | A) P(d | B, \neg c) + P(\neg c | A) P(\neg d | B, \neg c) ] \\ \\
 								      & = (0.3)(0.9) [ (0.27)(0.198) + (0.27)(0.43308) + (0.03)(0.243) + (0.03)(0.162)] \\ \\
 								      & = (0.3)(0.9)(0.1825416) \\ \\
-							P(D | B)  & = 0.049286232 \\ \\
+							P(B | A)  & = 0.049286232 \\ \\
 						\end{array}
-					\)					
+					\) \\
+					
+					\(	
+						P(A | B) = \frac{ P(B | A) P(A) }  {P(B)} = \frac{ 0.049286232 \cdot 0.3 }{ 0.9 }
+					\) \\ \\
+					\(
+						P(A | B) = 0.016428744
+					\) \\
 
 				\item{} \( P(B,D | C) \) \\
 				
 					\(
-						P(B,D | C) = \frac{ P(C | B,D)P(B,D) }{ P(C) } = \frac{ P(C | B,D)P(B)P(D | B)}{P(C)}
+						P(B,D | C) = \frac{ P(C | B,D)P(B,D) }{ P(C) } = \frac{ P(C | B,D)P(B)P(D | B,C)}{P(C)}
 					\) \\ \\
 					
 					\(
@@ -524,10 +532,6 @@
 					\)
 					
 					\(
-						\hspace{1mm}P(D | B) = 0.441
-					\) \\ 
-					
-					\(
 						\begin{array}{ll}
 							P(C | D,B) & = \Sigma_{a \in A} \Sigma_{c \in C} P(A,B,C,D) \\ \\
 									& = \Sigma_{a \in A} P(A) P(B) P(C | A) P(D | B,C) \\ \\
@@ -539,11 +543,11 @@
 					\) \\
 										
 					\(
-						P(B,D | C) = \frac{ P(C | B,D)P(B)P(D | B)}{P(C)} = \frac{ (0.0493614)(0.9)(0.441) }{ 0.277 }
+						P(B,D | C) = \frac{ P(C | B,D)P(B)P(D | B,C)}{P(C)} = \frac{ (0.0493614)(0.9)(0.198) }{ 0.277 }
 					\) \\
 					
 					\(
-						P(B, D | C) = 0.07072758
+						P(B, D | C) = 0.03175524
 					\) \\
 					
 				\item{} \( P(C | D,E) \) \\

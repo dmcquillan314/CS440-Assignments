@@ -1,0 +1,195 @@
+\input{cs440_style.tex}
+\usepackage{algorithm}
+\usepackage{listings}
+%\usepackage{algpseudocode}
+\usepackage{graphicx,amssymb,amsmath}
+\usepackage{epstopdf}
+\usepackage{color}
+\usepackage{listings}
+\lstset{ %
+language=Java,                % choose the language of the code
+basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+numbersep=5pt,                  % how far the line-numbers are from the code
+backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=single,           % adds a frame around the code
+tabsize=2,          % sets default tabsize to 2 spaces
+captionpos=b,           % sets the caption-position to bottom
+breaklines=true,        % sets automatic line breaking
+breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+escapeinside={\%*}{*)}          % if you want to add a comment within your code
+}
+
+\sloppy
+
+
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in
+\topmargin -0.5in
+\textheight 9.0in
+
+\begin{document}
+
+\solution{Dan McQuillan}{\today}{4 - Problem 4}{Spring 2014}
+
+\pagestyle{myheadings}  % Leave this command alone
+
+\begin{enumerate}
+
+	\item {\bf Solution to problem 4}
+	
+		\begin{enumerate}
+		
+			\item[(a)] 
+			
+			I again used the following four topologies when training the neural nets within the classifier with varying results:
+			
+				\begin{enumerate}
+				
+					\item[(1)] A neural network with 1 hidden layer consisting of 10 nodes.
+				
+					\item[(2)] A neural network with 2 hidden layers with 10 nodes in the first layer and 5 nodes in the second layer.
+				
+					\item[(3)] A neural network with 4 hidden layers with 5 nodes in the first layer, 10 nodes in the second layer, 15 nodes in the third layer and 20 nodes in the fourth layer
+				
+					\item[(4)] A neural network with 8 hidden layers with 5 nodes in the first layer, 10 nodes in the second layer, 15 nodes in the third layer, 20 nodes in the fourth layer, 15 nodes in the fifth layer, 10 nodes in the sixth layer, 5 nodes in the seventh layer and 2 nodes in the eighth layer.
+				
+				\end{enumerate}
+							
+			\item[(b)] Determine experimentally whether the bagging technique helps avoid over fitting in this case
+			
+				My expectation for this experiment was that I would obtain a higher accuracy with the bagging classifier than the neural network classifier.  Therefore, to prove this expectation I used the same network topology for bagging as I did for problem 3a (as described above).  The results of the training and testing compared to the results of the neural network are below:
+				
+				\[
+					\begin{array}{c|cc}
+						\text{Neural net \#} & \text{Bagging Accuracy} & \text{ Neural Network Accuracy } \\
+						\hline
+						1 & 14.018691588785046\% & 67.28971962616822\% \\
+						2 & 14.018691588785046\% & 67.99065420560747\% \\
+						3 & 14.330218068535826\% & 57.00934579439252\% \\
+						4 & 14.25233644859813\% & 51.518691588785046\% \\
+					\end{array}
+				\]
+				
+				Since I did not see a higher accuracy after training, it leads me to believe that I chose bad parameters for the neural network which could be the cause of the drop in accuracy.  I do however think that the bagging technique helped to reduce over fitting.  I believe this because in the results of the training it showed that the bagging technique consistently produced an accuracy of  \( \sim14\% \) whereas the variance of the neural network accuracy was much larger.  Therefore the bagging technique did help alleviate over fitting.			
+			
+		\end{enumerate}
+			
+\end{enumerate}
+
+\section{Source code:}
+
+\subsection{MainP4.java}
+\begin{lstlisting}
+package hw4.weka;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Date;
+import java.util.Random;
+
+import weka.classifiers.evaluation.Evaluation;
+import weka.classifiers.evaluation.output.prediction.XML;
+import weka.classifiers.functions.MultilayerPerceptron;
+import weka.classifiers.meta.Bagging;
+import weka.core.Instances;
+
+public class MainP4 {
+
+	public static void main(String[] args) {
+		try {
+			
+			File file = new File("glass.arff");
+			BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+			
+			
+			Instances instances = new Instances(bufferedReader);
+			
+			bufferedReader.close();
+			
+			final int numInstances = instances.numAttributes();			
+			instances.setClassIndex(numInstances - 1);
+			
+			Evaluation evaluation = new Evaluation(instances);
+			final Integer folds = 10;
+
+			StringBuilder applicationOutput = new StringBuilder();
+
+			applicationOutput.append("Begin problem 3 part a\n");
+			applicationOutput.append("folds: " + folds + "\n\n");
+
+				
+			StringBuffer internalStringBuffer = new StringBuffer();
+			XML internalOutput = new XML();
+			internalOutput.setBuffer(internalStringBuffer);
+			internalOutput.setHeader(instances);
+			internalOutput.setOutputDistribution(true);
+			
+//			percep.setGUI(true);
+//			percep.buildClassifier(instances);
+			
+			MultilayerPerceptron percep = new MultilayerPerceptron();
+			percep.setHiddenLayers("10");
+			Bagging bagging = new Bagging();
+			bagging.setClassifier(percep);
+			evaluation.crossValidateModel(bagging, instances, folds, new Random( new Date().getTime() ), internalOutput );
+			applicationOutput.append("Accuracy: " + evaluation.pctCorrect() + "%\n");
+
+			MultilayerPerceptron percep2 = new MultilayerPerceptron();
+			percep2.setHiddenLayers("10,5");
+			Bagging bagging2 = new Bagging();
+			bagging2.setClassifier(percep);
+			evaluation.crossValidateModel(bagging2, instances, folds, new Random( new Date().getTime() ), internalOutput );
+			applicationOutput.append("Accuracy: " + evaluation.pctCorrect() + "%\n");
+
+			MultilayerPerceptron percep3 = new MultilayerPerceptron();
+			percep3.setHiddenLayers("5,10,15,20");
+			Bagging bagging3 = new Bagging();
+			bagging3.setClassifier(percep);
+			evaluation.crossValidateModel(bagging3, instances, folds, new Random( new Date().getTime() ), internalOutput );
+			applicationOutput.append("Accuracy: " + evaluation.pctCorrect() + "%\n");
+
+			MultilayerPerceptron percep4 = new MultilayerPerceptron();
+			percep4.setHiddenLayers("5,10,15,20,15,10,5,2");
+			Bagging bagging4 = new Bagging();
+			bagging4.setClassifier(percep);
+			evaluation.crossValidateModel(bagging4, instances, folds, new Random( new Date().getTime() ), internalOutput );
+			applicationOutput.append("Accuracy: " + evaluation.pctCorrect() + "%\n");
+			
+			System.out.println("complete.");
+
+			applicationOutput.append("Begin problem 4 part a\n");
+			applicationOutput.append("folds: " + folds + "\n\n");
+
+				
+			Bagging percepTest = new Bagging();
+//			percep.setHiddenLayers("10");
+//			percep.setGUI(true);
+			percepTest.buildClassifier(instances);
+			
+			evaluation.crossValidateModel(percepTest, instances, folds, new Random( new Date().getTime() ), internalOutput );
+			applicationOutput.append("Accuracy: " + evaluation.pctCorrect() + "%\n");
+			
+			System.out.println(applicationOutput.toString());
+			
+			System.out.println("complete.");
+
+		} catch (IOException e) {
+			System.err.println( e );
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}
+\end{lstlisting}
+\end{document}
+

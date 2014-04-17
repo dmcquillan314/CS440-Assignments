@@ -1,0 +1,188 @@
+\input{cs440_style.tex}
+\usepackage{algorithm}
+\usepackage{listings}
+%\usepackage{algpseudocode}
+\usepackage{graphicx,amssymb,amsmath}
+\usepackage{epstopdf}
+\usepackage{color}
+\usepackage{listings}
+\lstset{ %
+language=Java,                % choose the language of the code
+basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+numbersep=5pt,                  % how far the line-numbers are from the code
+backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=single,           % adds a frame around the code
+tabsize=2,          % sets default tabsize to 2 spaces
+captionpos=b,           % sets the caption-position to bottom
+breaklines=true,        % sets automatic line breaking
+breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+escapeinside={\%*}{*)}          % if you want to add a comment within your code
+}
+
+\sloppy
+
+
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in
+\topmargin -0.5in
+\textheight 9.0in
+
+\begin{document}
+
+\solution{Dan McQuillan}{\today}{4 - Problem 3}{Spring 2014}
+
+\pagestyle{myheadings}  % Leave this command alone
+
+\begin{enumerate}
+
+	\item {\bf Solution to problem 3}
+	
+		\begin{enumerate}
+		
+			\item[(a)] 
+			
+			I used the following four topologies when training my neural networks with varying results:
+			
+				\begin{enumerate}
+				
+					\item[(1)] A neural network with 1 hidden layer consisting of 10 nodes.
+				
+					\item[(2)] A neural network with 2 hidden layers with 10 nodes in the first layer and 5 nodes in the second layer.
+				
+					\item[(3)] A neural network with 4 hidden layers with 5 nodes in the first layer, 10 nodes in the second layer, 15 nodes in the third layer and 20 nodes in the fourth layer
+				
+					\item[(4)] A neural network with 8 hidden layers with 5 nodes in the first layer, 10 nodes in the second layer, 15 nodes in the third layer, 20 nodes in the fourth layer, 15 nodes in the fifth layer, 10 nodes in the sixth layer, 5 nodes in the seventh layer and 2 nodes in the eighth layer.
+				
+				\end{enumerate}
+				
+				\[
+					\begin{array}{c|c}
+						\text{Neural net \#} & Accuracy \\
+						\hline
+						1 & 67.28971962616822\% \\
+						2 & 67.99065420560747\% \\
+						3 & 57.00934579439252\% \\
+						4 & 51.518691588785046\% \\
+					\end{array}
+				\]
+			
+			\item[(b)] Briefly explain the process by which a neural network is trained
+			
+			First the Delta values for the output nodes must be computed using the observed error from the training examples.  Then, starting with the output layer we must then repeat the following for each layer in the network until the earliest layer is reached:
+			
+				\begin{enumerate}
+				
+					\item[-] Propagate the Delta values back to the previous layer
+					
+					\item[-] Update the weights between the two layers
+				
+				\end{enumerate}
+					
+			\item[(c)] Briefly explain how the number of layers in a topology may affect the result
+			
+			If the optimal amount of layers are used it can result in increased accuracy of the training data and the testing data as well. However, if too many layers are used it can result in over fitting of the data. Consequently, if too few layers are used it can result in under fitting.
+			
+			
+			
+		\end{enumerate}
+			
+\end{enumerate}
+
+\section{Source code:}
+
+\subsection{MainP3.java}
+
+\begin{lstlisting}
+package hw4.weka;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Date;
+import java.util.Random;
+
+import weka.classifiers.evaluation.Evaluation;
+import weka.classifiers.evaluation.output.prediction.XML;
+import weka.classifiers.functions.MultilayerPerceptron;
+import weka.core.Instances;
+
+public class MainP3 {
+	
+	public static void main(String[] args) {
+		try {
+			File file = new File("glass.arff");
+			BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+			
+			
+			Instances instances = new Instances(bufferedReader);
+			
+			bufferedReader.close();
+			
+			final int numInstances = instances.numAttributes();			
+			instances.setClassIndex(numInstances - 1);
+			
+			Evaluation evaluation = new Evaluation(instances);
+			final Integer folds = 10;
+
+			StringBuilder applicationOutput = new StringBuilder();
+
+			applicationOutput.append("Begin problem 3 part a\n");
+			applicationOutput.append("folds: " + folds + "\n\n");
+
+				
+			StringBuffer internalStringBuffer = new StringBuffer();
+			XML internalOutput = new XML();
+			internalOutput.setBuffer(internalStringBuffer);
+			internalOutput.setHeader(instances);
+			internalOutput.setOutputDistribution(true);
+			
+			MultilayerPerceptron percep = new MultilayerPerceptron();
+			percep.setHiddenLayers("10");
+//			percep.setGUI(true);
+//			percep.buildClassifier(instances);
+			
+			evaluation.crossValidateModel(percep, instances, folds, new Random( new Date().getTime() ), internalOutput );
+			applicationOutput.append("Accuracy: " + evaluation.pctCorrect() + "%\n");
+			percep.setHiddenLayers("10,5");
+//			percep.setGUI(true);
+//			percep.buildClassifier(instances);
+			
+			evaluation.crossValidateModel(percep, instances, folds, new Random( new Date().getTime() ), internalOutput );
+			applicationOutput.append("Accuracy: " + evaluation.pctCorrect() + "%\n");
+			percep.setHiddenLayers("5,10,15,20");
+//			percep.setGUI(true);
+//			percep.buildClassifier(instances);
+			
+			evaluation.crossValidateModel(percep, instances, folds, new Random( new Date().getTime() ), internalOutput );
+			applicationOutput.append("Accuracy: " + evaluation.pctCorrect() + "%\n");
+			percep.setHiddenLayers("5,10,15,20,15,10,5,2");
+//			percep.setGUI(true);
+//			percep.buildClassifier(instances);
+			
+			evaluation.crossValidateModel(percep, instances, folds, new Random( new Date().getTime() ), internalOutput );
+			applicationOutput.append("Accuracy: " + evaluation.pctCorrect() + "%\n");
+
+			System.out.println(applicationOutput.toString());
+			
+			System.out.println("complete.");
+
+		} catch (IOException e) {
+			System.err.println( e );
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}
+\end{lstlisting}
+
+\end{document}
+
